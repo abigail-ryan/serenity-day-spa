@@ -1,1 +1,1 @@
-web: gunicorn codestar.wsgi
+web: gunicorn serenity_day_spa.wsgi
