@@ -94,14 +94,38 @@ ___
 
 #### Strategy
 
+* **User Engagement:** The website will prioritize a user-friendly interface  with simple navigation and clear CTA’s encouraging users to register an account in order to book appointments. Features such as quick access to treatment descriptions and an easy to use sign up form will enhance user interaction and increase booking rates.
+* **Brand Positioning:** Serenity Day Spa will be positioned as a tranquil oasis in Tramore, emphasizing its commitment to relaxation and wellness. The website will showcase traditional spa treatments infused with natural elements, creating an emotional connection with potential clients.
+
 #### Scope
+
+* **User Types:** The site will cater to two primary user groups: unregistered users who can explore treatment options and contact the spa for inquiries, and registered users who can book, edit, or cancel appointments through their personalised dashboard.
+* **Core Features:** Key functionalities will include a detailed treatment menu with descriptions and pricing, an easy account registration process, a robust booking system that allows users to select services and times, and a contact form for inquiries, ensuring all user needs are met efficiently.
 
 #### Structure
 
+* **Information Hierarchy:** The site’s information architecture will be designed to prioritize essential content. The homepage will feature direct links to the treatment menu, Login/Register options, and contact information, ensuring users can easily find what they need without unnecessary clicks.
+* **Content Strategy:** Engaging content will be developed that highlights each treatment’s benefits, including customer testimonials. This approach not only informs users but also helps builds trust and encourages them to book services.
+
 #### Skeleton
+
+Wireframes have been created for each page of the site.
+
 ##### Wireframes
 
+**DOCUMENTATION YET TO BE ADDED**
+* Homepage (featuring popular treatments)
+* Treatment menu (each treatment can be clicked on to view the full description including price and duration), 
+* Login/Registration form (simple layout for ease of use), 
+* User dashboard (showing appointments), 
+* Contact page (with clear fields for enquiries).
+
 #### Surface
+
+* **Visual Identity:** A calming color palette featuring soft blues and greens will be chosen to evoke tranquility. Typography will be selected for readability while reflecting elegance, ensuring that the visual identity aligns with the spa's mission of relaxation.
+* **Responsive Design:** The website design will be fully responsive, ensuring optimal functionality across all devices - smartphones, tablets, and desktops. This adaptability is crucial for users who may wish to book appointments while on-the-go.
+* **Accessibility Features:** Features like alt text for images, and screen reader compatibility will ensure that all users can access the site effectively.
+* **Feedback Mechanisms:** Visual feedback mechanisms such as confirmation messages upon successful bookings or error notifications during form submissions will be implemented. 
 
 ___
 
