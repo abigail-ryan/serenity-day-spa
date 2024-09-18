@@ -56,13 +56,37 @@ ___
 
 ### Project Goals
 
+The goal of this project is to create a tranquil and inviting online platform for users where they can easily access information about Serenity Day Spa’s range of relaxation treatments, and encourage visitors to register an account to book appointments.
+
 ___
 
 ### User Stories
 
+**As a site user:**
+* I can view a list of treatments so that I can select which one I want to view. - MUST HAVE
+* I can click on a treatment so that I can read the full description - MUST HAVE
+* I can register an account so that I can book an appointment - MUST HAVE
+* I can fill out a contact form so that I can contact the business with any queries I may have - MUST HAVE
+
+
+**As a registered user:**
+* I can create, view, update, delete bookings so that I can manage my appointments - MUST HAVE
+* I can fill out a contact form so that I can contact the business with any queries I may have - MUST HAVE
+* I can leave a review so that I can give my feedback to the business and other site users. - COULD HAVE
+
+
+**As a site admin:**
+* I can create, read, update, delete treatments so that I can manage my services options - MUST HAVE
+* I can view bookings so that I can manage my schedule - MUST HAVE
+* I can store contact form submissions so that I can review them - MUST HAVE
+* I can mark contact form submissions as read so that I can see how many I still need to process - MUST HAVE
+* I can approve/decline reviews so that I can filter out negative reviews - COULD HAVE
+
 ___
 
 ### Agile Development
+
+Serenity Day Spa was developed using an Agile approach. I used [Github Projects Board](https://github.com/users/abigail-ryan/projects/3) to manage the development of this project.
 
 ___
 
