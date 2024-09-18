@@ -131,8 +131,31 @@ ___
 
 ### Design
 #### Colour Scheme
+
+Given that Serenity Day Spa is situated in a coastal town and offers treatments that incorporate natural elements, I selected a color palette from Canva Colors that features soft sandy tones complemented by shades of blue and green.
+
+**My Chosen Colors:**
+
+**COLOUR PALETTE TO BE ADDED HERE**
+
+* Brown: #daa486 (representing sandy hues)
+* Cream: #fafcf0 (evoking a sense of warmth and comfort)
+* Teal Green: #13fbe2 (reflecting the tranquility of nature)
+* Aquamarine: #008291 (symbolizing the calming essence of the sea)
+
 #### Typography
+
+I chose the following typography for my project:
+* Dancing Script - as it’s a lively cursive font with a friendly and inviting feel. It is used for the headings throughout the site.
+* Roboto: clean and modern with excellent readability. Used throughout the entire site for all text elements.
+
+**FONTJOY SCREENSHOT TO BE ADDED HERE**
+
 #### Imagery
+
+To create the Spa's interior images for my project, I utilised an AI image generator [DeepAI](https://deepai.org/machine-learning-model/text2img), guided by the color palette I selected. The soft sandy tones, along with the natural blues and greens, inspired the visual elements, ensuring they align with the serene and coastal theme of Serenity Day Spa.
+
+The media used throughout Serenity Day Spa Treatments were sourced from (images sources placed here). Attributions are placed in the Credits section of this README.
 
 ____
 
