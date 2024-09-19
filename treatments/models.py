@@ -14,3 +14,6 @@ class Treatment(models.Model):
     has_requirements = models.BooleanField(default=False)
     requirements_details = models.CharField(max_length=250)
     status = models.IntegerField(choices=STATUS, default=0)
+
+    def __str__(self):
+        return f"{self.name}"
