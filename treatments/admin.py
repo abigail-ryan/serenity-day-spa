@@ -9,7 +9,7 @@ class TreatmentAdmin(SummernoteModelAdmin):
     search_fields = ['name',]
     list_filter = ('status',)
     prepopulated_fields = {'slug': ('name',)}
-    summernote_fields = ('description', 'excerpt', 'price', 'duration', 'has_requirements', 'requirements_details',)
+    summernote_fields = ('description', 'requirements_details',)
 
 
 # Register your models here.
