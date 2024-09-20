@@ -5,7 +5,7 @@ from django_summernote.admin import SummernoteModelAdmin
 @admin.register(Treatment)
 class TreatmentAdmin(SummernoteModelAdmin):
 
-    list_display = ('name', 'slug', 'status')
+    list_display = ('name', 'slug', 'price', 'status')
     search_fields = ['name',]
     list_filter = ('status',)
     prepopulated_fields = {'slug': ('name',)}
