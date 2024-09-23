@@ -12,6 +12,9 @@
             <!-- Content goes directly underneath this -->
             {{ treatment.description | safe }}
             <hr>
+            <p>Requirements: 
+                {{ treatment.requirements_details | safe }}</p>
+            <hr>
             <p>Duration: {{ treatment.duration }} minutes</p>
             <p>Price: €{{ treatment.price }}</p>
             <hr>
