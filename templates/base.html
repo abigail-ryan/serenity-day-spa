@@ -1,5 +1,11 @@
-{% url 'home' as home_url %}
 {% load static %}
+
+{% url 'home' as home_url %}
+{% url 'treatments' as treatments_url' %}
+{% url 'account_login' as login_url %}
+{% url 'account_signup' as signup_url %}
+{% url 'account_logout' as logout_url %}
+
 
 <!-- TEMPORARY LAYOUT FOR DEVELOPMENT - TO BE UPDATED -->
 
@@ -41,10 +47,24 @@
                     <li class="nav-item">
                         <a class="nav-link {% if request.path == home_url %}active{% endif %}" aria-current="page"
                             href="{% url 'home' %}">Home</a>
-                            <a class="nav-link {% if request.path == treatments_url %}active{% endif %}" aria-current="page"
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.path == treatments_url %}active{% endif %}" aria-current="page"
                             href="{% url 'treatments' %}">Treatments</a>
                     </li>
-
+                    </li>
+                    {% if user.is_authenticated %}
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.path == logout_url %}active{% endif %}" aria-current="page" href="{% url 'account_logout' %}">Logout</a>
+                    </li>
+                    {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.path == signup_url %}active{% endif %}" aria-current="page"
+                            href="{% url 'account_signup' %}">Register</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.path == login_url %}active{% endif %}" aria-current="page" href="{% url 'account_login' %}">Sign in</a>
+                    </li>
+                    {% endif %}
                 </ul>
             </div>
         </div>
