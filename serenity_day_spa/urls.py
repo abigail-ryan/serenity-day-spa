@@ -16,6 +16,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from home import views as index_views
+from treatments import views as treatments_views
+from user_account import views as user_account_views
 
 urlpatterns = [
     path("accounts/", include("allauth.urls")),
@@ -23,4 +26,5 @@ urlpatterns = [
     path("", include("home.urls")),
     path('summernote/', include('django_summernote.urls')),
     path("", include("treatments.urls")),
+    path("", include("user_account.urls")),
 ]
