@@ -23,6 +23,7 @@ from user_account import views as user_account_views
 urlpatterns = [
     path("accounts/", include("allauth.urls")),
     path('admin/', admin.site.urls),
+    path("", include("contact.urls")),
     path("", include("home.urls")),
     path('summernote/', include('django_summernote.urls')),
     path("", include("treatments.urls")),

@@ -5,15 +5,3 @@ from django.http import HttpResponse
 # Create your views here.
 class UserAccount(TemplateView):
     template_name = 'my_account/my_account.html'
-
-
-#     def get(self, request):
-#         return HttpResponse("This is your account page")
-
-# from django.shortcuts import render
-# from django.views.generic import TemplateView
-
-
-# # Create your views here.
-# class MyAccount(TemplateView):
-#     template_name = 'user_account/my_account.html'
