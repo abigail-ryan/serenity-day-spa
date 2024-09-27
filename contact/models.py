@@ -9,5 +9,9 @@ class ContactForm(models.Model):
     read = models.BooleanField(default=False)
     sent_on = models.DateTimeField(auto_now_add=True)
 
+    class Meta:
+        ordering = ["sent_on"]
+
+
     def __str__(self):
-        return f"Contact from {self.name}"
+            return f"Contact from {self.name}"
