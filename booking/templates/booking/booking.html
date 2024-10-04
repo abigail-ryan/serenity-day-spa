@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<h1 class="text-center mt-3">Book an Appointment</h1>
+
+<div class="shadow p-4 mb-5 bg-body rounded text-black m-5">
+    <form method="post" action="{% url 'booking' %}" class="me-2 ms-2" required>
+        {% csrf_token %}
+
+        <!-- Selects a treatment -->
+        <div>
+            <h3>Select Treatment:</h3>
+            <select class="form-select fs-3" name="treatment" required>
+                {% for treatment in treatments %}
+                <option value="{{ treatment.id }}">{{ treatment.name }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <!-- Selects a day -->
+        <div class="mt-3">
+            <h3>Select Day:</h3>
+            <select class="form-select fs-3" name="day" required>
+                {% for weekday in weekdays %}
+                <option value="{{ weekday }}">{{ weekday }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <!-- Selects a time -->
+        <div class="mt-3">
+            <h3>Select Time:</h3>
+            <select class="form-select fs-3" name="time" required>
+                {% for time in times %}
+                <option value="{{ time }}">{{ time }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <!-- User details -->
+        <div class="mt-3">
+            <h3>Your Details:</h3>
+            <div class="form-input fs-3">
+                <input type="text" name="first_name" placeholder="First Name" required /></div>
+            <div class="fs-3">
+                <input type="text" name="last_name" placeholder="Last Name" required /></div>
+            <div class="fs-3">
+                <input type="email" name="email" placeholder="Email" required /></div>
+            <div class="fs-3">
+                <input type="text" name="phone_number" placeholder="Phone Number" required /></div>
+            <div class="fs-3">
+                <textarea name="notes" placeholder="Let us know if you have any skin irritations/allergies..."></textarea></div>
+        </div>
+
+        <br/>
+        <button type="submit" class="btn btn-primary text-white">Book Now</button>
+    </form>
+</div>
+
+
+{% endblock %}
