@@ -1,5 +1,6 @@
-from django.views.generic.edit import FormView
+from django.views.generic.edit import FormView, UpdateView, DeleteView
 from django.urls import reverse_lazy
+from django.shortcuts import render, get_object_or_404
 from django.contrib import messages
 from .forms import BookingForm
 from .models import Appointment, Treatment
@@ -11,6 +12,14 @@ class BookingView(FormView):
     template_name = 'booking/booking.html'
     form_class = BookingForm
     success_url = reverse_lazy('my-account')  # Redirect after successful booking
+
+
+    def check_availability(self, day, time, current_booking=None):
+        existing_booking=Appointment.object.filter(day=day, time=time)
+        if current_booking:
+            existing_booking = existing_booking.exclude(pk=current_booking.pk)
+        return not existing_booking.exists()
+
 
     def form_valid(self, form):
         # Extract data from the form
@@ -30,8 +39,8 @@ class BookingView(FormView):
 
         if min_date <= day.strftime('%d-%m-%Y') <= max_date:
             if day.weekday() in [1, 2, 3, 4, 5]:  # Tuesday, Wednesday, Thursday, Friday, Saturday
-                if Appointment.objects.filter(day=day).count() < 10:
-                    if not Appointment.objects.filter(day=day, time=time).exists():
+                if Appointment.objects.filter(day=day).count() < 9:
+                    if self.check_availability(day, time):
                         # Create the appointment
                         Appointment.objects.create(
                             user=self.request.user,
@@ -70,81 +79,58 @@ class BookingView(FormView):
         return context
 
 
+class BookingEdit(UpdateView):
+    """
+    Edit an appointment
+    """
+    model = Appointment
+    form_class = BookingForm
+    template_name = 'booking/booking_edit.html'
+    success_url = reverse_lazy('my-account')
+
+    def get_object(self, queryset=None):
+        return Appointment.objects.get(pk=self.kwargs['pk'], user=self.request.user)  # Ensures the logged in user owns the appointment
+
+    def form_valid(self, form):
+
+        # Exclude date and time fields from cleaned data
+        cleaned_data = form.cleaned_data
+        new_day = cleaned_data.get('day')
+        new_time = cleaned_data.get('time')
+
+        # Check if the new time and date are available
+        if self.check_availability(new_day, new_time, current_booking=self.get_object()):
+            appointment = self.get_object()
+            appointment.treatment = cleaned_data['treatment']
+            appointment.day = new_day
+            appointment.time = new_time
+            appointment.first_name = cleaned_data['first_name']
+            appointment.last_name = cleaned_data['last_name']
+            appointment.email = cleaned_data['email']
+            appointment.phone_number = cleaned_data['phone_number']
+            appointment.notes = cleaned_data['notes']
+            appointment.save()
+
+            messages.success(self.request, "Appointment updated successfully!")
+            return super().form_valid(form)
+
+            form.add_error('time', 'Sorry, this time and date is already booked.')
+            return self.form_invalid(form)
+
+        
 
 
-# def booking(request):
-#     # Generate a list of the next 21 days and get all available treatments
-#     today = datetime.now()
-#     weekdays = [(today + timedelta(days=i)).strftime('%d-%m-%Y') for i in range(22)]
-#     treatments = Treatment.objects.all()
+class DeleteBooking(DeleteView):
+    """
+    Delete an appointment
+    """
+    model = Appointment
+    template_name = 'booking/booking_confirm_delete.html'
+    success_url = reverse_lazy('my-account')
 
-#     TIME_SLOTS = [
-#         "9 AM", "9:30 AM", "10 AM", "10:30 AM", "11 AM", 
-#         "11:30 AM", "12 PM", "12:30 PM", "1 PM", "1:30 PM",
-#         "2 PM", "2:30 PM", "3 PM", "3:30 PM", "4 PM",
-#         "4:30 PM", "5 PM", "5:30 PM"
-#     ]
+    def get_object(self, queryset=None):
+        return Appointment.objects.get(pk=self.kwargs['pk'], user=self.request.user)  # Ensures the logged in user owns the appointment
 
-#     if request.method == 'POST':
-#         treatment_id = request.POST.get('treatment')
-#         day_str = request.POST.get('day')
-#         time = request.POST.get('time')
-#         first_name = request.POST.get('first_name')
-#         last_name = request.POST.get('last_name')
-#         email = request.POST.get('email')
-#         phone_number = request.POST.get('phone_number')
-#         notes = request.POST.get('notes', '')
-
-#         if not treatment_id:
-#             messages.error(request, "Please select a Treatment!")
-#             return redirect('booking/booking.html')
-
-#         # Fetch the treatment instance
-#         try:
-#             treatment = Treatment.objects.get(id=treatment_id)
-#         except Treatment.DoesNotExist:
-#             messages.error(request, "Selected treatment does not exist.")
-#             return redirect('booking/booking.html')
-
-#         try:
-#             day = datetime.strptime(day_str, '%d-%m-%Y')  # Convert string to datetime
-#         except ValueError:
-#             messages.error(request, "Invalid date format.")
-#             return redirect('booking/booking.html')
-
-#         # Validate date and time
-#         minDate = today.strftime('%d-%m-%Y')
-#         maxDate = (today + timedelta(days=21)).strftime('%d-%m-%Y')
-
-#         if minDate <= day_str <= maxDate:
-#             if day.weekday() in [0, 2, 5]:  # Monday (0), Wednesday (2), Saturday (5)
-#                 if Appointment.objects.filter(day=day).count() < 10:
-#                     if not Appointment.objects.filter(day=day, time=time).exists():
-#                         # Create the appointment with all required fields
-#                         Appointment.objects.create(
-#                             user=request.user,
-#                             first_name=first_name,
-#                             last_name=last_name,
-#                             email=email,
-#                             phone_number=phone_number,
-#                             treatment=treatment,
-#                             day=day,
-#                             time=time,
-#                             notes=notes
-#                         )
-#                         messages.success(request, "Appointment Saved!")
-#                         return redirect('my-account')
-#                     else:
-#                         messages.error(request, "Sorry, the selected time is already booked!")
-#                 else:
-#                     messages.error(request, "Sorry, the selected date is full!")
-#             else:
-#                 messages.error(request, "Sorry, the selected date is incorrect.")
-#         else:
-#             messages.error(request, "Sorry, the selected date isn't in the correct time period!")
-
-#     return render(request, 'booking/booking.html', {
-#         'weekdays': weekdays,
-#         'treatments': treatments,
-#         'times': TIME_SLOTS,
-#     })
+    def delete(self, request, *args, **kwargs):
+        messages.success(request, "Appointment deleted successfully!")
+        return super().delete(request, *args, **kwargs)

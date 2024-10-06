@@ -18,11 +18,16 @@
     <div class="col-12 col-md-8 my-5">
         {% for appointment in appointments %}
         <div class="list-group fs-4 border p-3 mb-3">
-            <p class="list-group mt-2">Treatment: {{ appointment.treatment }}</p>
+            <p class="list-group mt-2"><strong>{{ appointment.treatment }}</strong></p>
             <p class="list-group mt-2">Date: {{ appointment.day }}</p>
             <p class="list-group mt-2">Time: {{ appointment.time }}</p>
             <div class="mt-3 mb-2">
-                
+            <tr>
+                <td>
+                <a href="">Edit</a> |
+                <a href="">Delete</a>
+                </td>
+            </tr>  
             </div>
         </div>
         {% endfor %}
