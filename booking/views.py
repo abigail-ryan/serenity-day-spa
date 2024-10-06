@@ -14,15 +14,16 @@ class BookingView(FormView):
     success_url = reverse_lazy('my-account')  # Redirect after successful booking
 
 
-    def check_availability(self, day, time, current_booking=None):
-        existing_booking=Appointment.object.filter(day=day, time=time)
-        if current_booking:
-            existing_booking = existing_booking.exclude(pk=current_booking.pk)
-        return not existing_booking.exists()
+    def check_availability(self, day, time, current_appointment=None):
+        existing_appointments = Appointment.objects.filter(day=day, time=time)
+        if current_appointment:
+            existing_appointments = existing_appointments.exclude(pk=current_appointment.pk)
+        return not existing_appointments.exists()
 
 
     def form_valid(self, form):
         # Extract data from the form
+        cleaned_data = form.cleaned_data
         treatment = form.cleaned_data['treatment']
         day = form.cleaned_data['day']
         time = form.cleaned_data['time']
@@ -79,7 +80,7 @@ class BookingView(FormView):
         return context
 
 
-class BookingEdit(UpdateView):
+class BookingEdit(BookingView, UpdateView):
     """
     Edit an appointment
     """
@@ -98,9 +99,11 @@ class BookingEdit(UpdateView):
         new_day = cleaned_data.get('day')
         new_time = cleaned_data.get('time')
 
+        # Get the current appointment
+        appointment = self.get_object()
+
         # Check if the new time and date are available
-        if self.check_availability(new_day, new_time, current_booking=self.get_object()):
-            appointment = self.get_object()
+        if self.check_availability(new_day, new_time, current_appointment=appointment):
             appointment.treatment = cleaned_data['treatment']
             appointment.day = new_day
             appointment.time = new_time
@@ -112,10 +115,11 @@ class BookingEdit(UpdateView):
             appointment.save()
 
             messages.success(self.request, "Appointment updated successfully!")
+            print("Redirecting to:", self.success_url)  # Debugging line
             return super().form_valid(form)
 
-            form.add_error('time', 'Sorry, this time and date is already booked.')
-            return self.form_invalid(form)
+        form.add_error('time', 'Sorry, this time and date is already booked.')
+        return self.form_invalid(form)
 
         
 
@@ -132,5 +136,8 @@ class DeleteBooking(DeleteView):
         return Appointment.objects.get(pk=self.kwargs['pk'], user=self.request.user)  # Ensures the logged in user owns the appointment
 
     def delete(self, request, *args, **kwargs):
-        messages.success(request, "Appointment deleted successfully!")
+        appointment = self.get_object()
+        print("Deleting appointment:", appointment)  # Debugging line
+        messages.success(self.request, "Appointment deleted successfully!")
+        
         return super().delete(request, *args, **kwargs)
