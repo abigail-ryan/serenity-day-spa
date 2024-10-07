@@ -1,6 +1,6 @@
 from django.views.generic.edit import FormView, UpdateView, DeleteView
 from django.urls import reverse_lazy
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib import messages
 from .forms import BookingForm
 from .models import Appointment, Treatment
@@ -18,6 +18,9 @@ class BookingView(FormView):
         existing_appointments = Appointment.objects.filter(day=day, time=time)
         if current_appointment:
             existing_appointments = existing_appointments.exclude(pk=current_appointment.pk)
+            # Debugging output to see which appointments are being checked
+        print(f"Checking availability for day: {day}, time: {time}")
+        print(f"Existing appointments: {[appt.pk for appt in existing_appointments]}")
         return not existing_appointments.exists()
 
 
@@ -103,7 +106,23 @@ class BookingEdit(BookingView, UpdateView):
         appointment = self.get_object()
 
         # Check if the new time and date are available
+        if new_day == appointment.day and new_time == appointment.time:
+        # If they are the same, update without checking availability
+            appointment.treatment = cleaned_data['treatment']
+            appointment.first_name = cleaned_data['first_name']
+            appointment.last_name = cleaned_data['last_name']
+            appointment.email = cleaned_data['email']
+            appointment.phone_number = cleaned_data['phone_number']
+            appointment.notes = cleaned_data['notes']
+            appointment.save()
+
+            messages.success(self.request, "Appointment updated successfully!")
+            return redirect(self.success_url)
+
+
+        # If they are different, check availability
         if self.check_availability(new_day, new_time, current_appointment=appointment):
+            # Update the appointment details
             appointment.treatment = cleaned_data['treatment']
             appointment.day = new_day
             appointment.time = new_time
@@ -115,13 +134,11 @@ class BookingEdit(BookingView, UpdateView):
             appointment.save()
 
             messages.success(self.request, "Appointment updated successfully!")
-            print("Redirecting to:", self.success_url)  # Debugging line
-            return super().form_valid(form)
-
-        form.add_error('time', 'Sorry, this time and date is already booked.')
-        return self.form_invalid(form)
-
+       
+        else:
+            messages.error(self.request, "Sorry, the selected time is already booked.")
         
+        return self.form_invalid(form)
 
 
 class DeleteBooking(DeleteView):
