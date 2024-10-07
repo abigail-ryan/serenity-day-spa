@@ -64,9 +64,9 @@ class BookingView(FormView):
                 else:
                     messages.error(self.request, "Sorry, the selected date is full!")
             else:
-                messages.error(self.request, "Sorry, the selected date is incorrect.")
+                messages.error(self.request, "Sorry, you can only book Tuesday to Saturday!")
         else:
-            messages.error(self.request, "Sorry, the selected date isn't in the correct time period!")
+            messages.error(self.request, "Sorry, you can only book up to 21 days in advance!")
 
         return self.form_invalid(form)
 
@@ -152,9 +152,9 @@ class DeleteBooking(DeleteView):
     def get_object(self, queryset=None):
         return Appointment.objects.get(pk=self.kwargs['pk'], user=self.request.user)  # Ensures the logged in user owns the appointment
 
-    def delete(self, request, *args, **kwargs):
-        appointment = self.get_object()
-        print("Deleting appointment:", appointment)  # Debugging line
+    def form_valid(self, form):
+        response = super().form_valid(form)
+        
         messages.success(self.request, "Appointment deleted successfully!")
         
-        return super().delete(request, *args, **kwargs)
+        return response
