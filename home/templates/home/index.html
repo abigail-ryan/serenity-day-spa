@@ -1,20 +1,109 @@
 {% extends "base.html" %}
 
+{% load static %}
+
 {% block content %}
 
-<!-- TEMPORARY LAYOUT FOR DEVELOPMENT - TO BE UPDATED -->
-
-<!-- treatments.html content starts here -->
-<div class="container-fluid">
-    <div class="row">
-
-        <!-- Treatments Column -->
-        <div class="col-12 mt-3 left">
-            <div class="row">
-                <a href="{% url 'treatments' %}"><button>View all Treatments</button></a>
+<!-- Hero section - Spa Interior Carousel -->
+<div class="container-fluid p-0">
+    <div id="spa-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <!--TEMPORARY IMAGES - TO BE UPLOADED ON CLOUDINARY -->
+                <img class="first-slide d-block w-100" src="{% static 'images/spa-reception.jpg' %}" alt="serenity day spa reception">
             </div>
+            <div class="carousel-item">
+                <img class="second-slide d-block w-100" src="{% static 'images/spa-massage-room.jpg' %}" alt="serenity day spa massage room">
+            </div>
+            <div class="carousel-item">
+                <img class="third-slide d-block w-100" src="{% static 'images/spa-garden-room-pool.jpg' %}" alt="serenity day spa garden room pool">
+            </div>
+        </div>
+        <!-- Overlay Text -->
+        <div class="overlay"></div> <!-- Overlay div -->
+        <div class="carousel-caption d-block"> <!--Change z-index -->
+            <h1>Serenity Day Spa</h1>
+            <p>Relax, Escape, Unwind</p>
         </div>
     </div>
 </div>
 
-{% endblock %}
+<div class="container">
+    <div class="row hero-text">
+        <div class="col-md-12 text-center">
+        <h2 class="featurette-heading">Welcome to Serenity Day Spa, <span class="text-muted">where tranquility meets luxury.</span></h2>
+        <p class="lead">
+            Immerse yourself in our exquisite, sea-inspired treatments designed to rejuvenate your body and soul. Whether you seek a soothing massage or a refreshing facial, our expert therapists are here to pamper you.
+            You can also unwind in our serene Garden Room Sea Pool, a perfect retreat to relax and recharge.
+            <br>Book your escape to Serenity today!</p>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <h2 class="featured-treatments-heading text-center">Popular Treatments</h2>
+    <div class="album py-5 bg-light">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card mb-4 shadow">
+                    <img src="{% static 'images/sea-salt-body-scrub.jpg' %}" class="card-img-top" alt="Sea Salt Body Scrub">
+                    <h4 class="treatment-name text-center">Sea Salt Body Scrub</h4>
+                    <div class="card-body">
+                        <p class="card-text">Buff away dull skin with this invigorating scrub that utilizes natural sea salt to exfoliate and moisturizing oils to leave your skin silky smooth.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <a href="{% url 'treatment_details' 'sea-salt-body-scrub' %}" class="btn btn-sm btn-outline-secondary">View</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card mb-4 shadow">
+                    <img src="{% static 'images/hot-stone-massage.jpg' %}" class="card-img-top" alt="Hot Stone Massage">
+                    <h4 class="treatment-name text-center">Hot Stone Massage</h4>
+                    <div class="card-body">
+                        <p class="card-text">Melt away tension and soothe sore muscles with this deeply relaxing massage that combines therapeutic heat with skilled techniques for ultimate relaxation.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <a href="{% url 'treatment_details' 'hot-stone-massage' %}" class="btn btn-sm btn-outline-secondary">View</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card mb-4 shadow">
+                    <img src="{% static 'images/seaweed-body-wrap.jpg' %}" class="card-img-top" alt="Seaweed Body Wrap">
+                    <h4 class="treatment-name text-center">Seaweed Body Wrap</h4>
+                    <div class="card-body">
+                        <p class="card-text">Revitalize your skin with this nutrient-rich treatment that hydrates, detoxifies and promotes a healthy glow using the rejuvenating power of seaweed.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <a href="{% url 'treatment_details' 'seaweed-body-wrap' %}" class="btn btn-sm btn-outline-secondary">View</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        <!-- Treatments Button -->
+        <div class="col-12 mt-3 text-center">
+            <a href="/treatments/"><button type='button' class='btn btn-primary'>View all Treatments</button></a>
+        </div>
+
+
+    <!-- About section -->
+    <div class="container">
+    <hr class="about-divider">
+        <div class="row about">
+        <div class="col-md-7">
+            <h2 class="about-heading text-center">About Us</h2>
+            <p class="about-text">Serenity Day Spa is a new oasis located in the beautiful coastal town of Tramore, Co. Waterford. We are a small team specialising in rejuvenating treatments inspired by the sea, using locally sourced products infused with marine elements. Join us for a unique spa experience that blends luxury with nature's finest offerings.</p>
+        </div>
+        <div class="col-md-5">
+            <!--TEMPORARY IMAGE - TO BE UPLOADED ON CLOUDINARY -->
+            <img class="about-image img-fluid mx-auto" src="{% static 'images/spa-staff-photo.jpg' %}" alt="serenity day spa staff photo">
+        </div>
+    </div>
+
+  </div>
+
+
+{% endblock content %}
