@@ -15,26 +15,26 @@
             <div class="row">
                 {% for treatment in treatment_list %}
                 <div class="col-md-4">
-                    <div class="card mb-4">
+                    <div class="card mb-4 shadow">
                         <div class="card-body">
                             <div class="image-container">
                                 {% if "placeholder" in treatment.featured_image.url %}
                                 <img class="card-img-top" src="{% static 'images/temporary-placeholder.jpg' %}"
                                     alt="placeholder image">
                                 {% else %}
-                                <img class="card-img-top" src="{{ treatment.featured_image.url }}"
-                                    alt="{{ treatment.name }}">
+                                <a href="{% url 'treatment_details' treatment.slug %}"><img class="card-img-top" src="{{ treatment.featured_image.url }}"
+                                    alt="{{ treatment.name }}"></a>
                                 {% endif %}
                                 <div class="image-flash">
                                 </div>
                             </div>
-                            <a href="{% url 'treatment_details' treatment.slug %}" class="post-link">
-                                <h2 class="card-title">{{ treatment.name }}</h2></a>
+                                <h2 class="card-title">{{ treatment.name }}</h2>
 
                             <hr />
                             <p class="card-text text-muted h6" id=price>€{{ treatment.price }}</p>
                                 <p class="excerpt">{{treatment.excerpt}}</p>
                             </p>
+                            <a href="{% url 'treatment_details' treatment.slug %}" class="btn btn-sm btn-outline-secondary">View</a>
                         </div>
                     </div>
                 </div>
