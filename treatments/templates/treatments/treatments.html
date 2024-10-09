@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 
+{% load static %}
+
 {% block content %}
 
 <!-- TEMPORARY LAYOUT FOR DEVELOPMENT - TO BE UPDATED -->
@@ -16,6 +18,13 @@
                     <div class="card mb-4">
                         <div class="card-body">
                             <div class="image-container">
+                                {% if "placeholder" in post.featured_image.url %}
+                                <img class="card-img-top" src="{% static 'images/default.jpg' %}"
+                                    alt="placeholder image">
+                                {% else %}
+                                <img class="card-img-top" src="{{ treatment.featured_image.url }}"
+                                    alt="{{ treatment.name }}">
+                                {% endif %}
                                 <div class="image-flash">
                                 </div>
                             </div>

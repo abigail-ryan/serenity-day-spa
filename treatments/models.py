@@ -1,11 +1,13 @@
 from django.db import models
 from django.contrib.auth.models import User
+from cloudinary.models import CloudinaryField
 
 STATUS = ((0, "Draft"), (1, "Published"))
 
 # Create your models here.
 class Treatment(models.Model):
     name = models.CharField(max_length=50, unique=True, blank=False)
+    featured_image = CloudinaryField('image', default='placeholder')
     slug = models.SlugField(max_length=50, unique=True)
     description = models.TextField(blank=False)
     excerpt = models.CharField(max_length=250, blank=False)
