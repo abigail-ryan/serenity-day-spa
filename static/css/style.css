@@ -171,26 +171,7 @@ nav > li {
     position: relative;
 }
 
-/* .image-flash {
-    position: absolute;
-    bottom: 5%;
-    min-width: 30%;
-    left: -2px;
-    background-color: #188181;
-} */
-
-/* .scale {
-    width: 100%;
-    height: auto;
-} */
-
-
-/* .post-link {
-    text-decoration: none;
-    color: #445261;
-} */
-
-.post-link:hover,
+/* .post-link:hover,
 .page-link {
     color: #E84610;
 }
@@ -203,15 +184,15 @@ nav > li {
 .post-subtitle {
     margin-left: 5%;
     color: lightgray;
-}
+} */
 
-.btn-signup,
+.btn-signup, .btn-contact,
 .btn-edit {
     background-color: #daa486;
     color: black;
 }
 
-.btn-signup:hover,
+.btn-signup:hover, .btn-contact:hover,
 .btn-signup:active {
     background-color: #fff;
     color: #daa486;
@@ -229,12 +210,6 @@ nav > li {
     color: #445261;
     text-decoration: underline;
 }
-
-/* .btn-like {
-    color: #E84610;
-    border: none;
-    background: transparent;
-} */
 
 .btn-delete {
     color: #fff;

@@ -4,16 +4,18 @@
 
 {% block content %}
 
-<div class="row justify-content-center">
-    <div class="col-12 col-md-8 my-5">
-        <h2>Book an Appointment</h2>
-        <p>Please fill out the form below to book your appointment.</p>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-8 my-5">
+            <h2><strong>Book an Appointment</strong></h2>
+            <p>Please fill out the form below to book your appointment.</p>
 
-        <form method="post" action="{% url 'booking' %}">
-            {% csrf_token %}
-            {{ form | crispy }}  <!-- Render the entire form using crispy -->
-            <button class="btn btn-primary" type="submit">Book Now</button>
-        </form>
+            <form method="post" action="{% url 'booking' %}">
+                {% csrf_token %}
+                {{ form | crispy }}  <!-- Render the entire form using crispy -->
+                <button class="btn btn-primary" type="submit">Book Now</button>
+            </form>
+        </div>
     </div>
 </div>
 
