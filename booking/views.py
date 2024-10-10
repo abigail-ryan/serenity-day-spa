@@ -184,7 +184,7 @@ def custom_handler404(request, exception):
     return render (request, '404.html', status=404)
 
 
-def custom_handler500(request, exception):
+def custom_handler500(request):
     """
     Custome handler for 500 server errors
     """
