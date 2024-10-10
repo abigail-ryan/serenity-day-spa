@@ -102,6 +102,22 @@ class BookingEdit(BookingView, UpdateView):
         new_day = cleaned_data.get('day')
         new_time = cleaned_data.get('time')
 
+
+        # Check if the new day is valid (not Sunday or Monday)
+        if new_day.weekday() in [6, 0]:  # 6 = Sunday, 0 = Monday
+
+            messages.error(self.request, "Sorry, you can only book Tuesday to Saturday!")
+            return self.form_invalid(form)
+
+        # Get today's date and calculate the maximum allowed date
+        today = datetime.now().date()
+        max_date = today + timedelta(days=21)
+
+        # Check if the new day is within the allowed range
+        if not today <= new_day <= max_date:
+            messages.error(self.request, "Sorry, you can only book up to 21 days in advance!")
+            return self.form_invalid(form)
+
         # Get the current appointment
         appointment = self.get_object()
 
@@ -134,11 +150,11 @@ class BookingEdit(BookingView, UpdateView):
             appointment.save()
 
             messages.success(self.request, "Appointment updated successfully!")
+            return redirect(self.success_url)
        
         else:
             messages.error(self.request, "Sorry, the selected time is already booked.")
-        
-        return self.form_invalid(form)
+            return self.form_invalid(form)
 
 
 class DeleteBooking(DeleteView):
