@@ -1,3 +1,4 @@
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic.edit import FormView, UpdateView, DeleteView
 from django.urls import reverse_lazy
 from django.shortcuts import render, get_object_or_404, redirect
@@ -8,7 +9,7 @@ from datetime import datetime, timedelta
 
 # Create your views here.
 
-class BookingView(FormView):
+class BookingView(LoginRequiredMixin, FormView):
     template_name = 'booking/booking.html'
     form_class = BookingForm
     success_url = reverse_lazy('my-account')  # Redirect after successful booking
@@ -83,7 +84,7 @@ class BookingView(FormView):
         return context
 
 
-class BookingEdit(BookingView, UpdateView):
+class BookingEdit(LoginRequiredMixin, UpdateView):
     """
     Edit an appointment
     """
@@ -157,7 +158,7 @@ class BookingEdit(BookingView, UpdateView):
             return self.form_invalid(form)
 
 
-class DeleteBooking(DeleteView):
+class DeleteBooking(LoginRequiredMixin, DeleteView):
     """
     Delete an appointment
     """
