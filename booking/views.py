@@ -175,3 +175,17 @@ class DeleteBooking(LoginRequiredMixin, DeleteView):
         messages.success(self.request, "Appointment deleted successfully!")
         
         return response
+
+
+def custom_handler404(request, exception):
+    """
+    Custome handler for 404 errors
+    """
+    return render (request, '404.html', status=404)
+
+
+def custom_handler500(request, exception):
+    """
+    Custome handler for 500 server errors
+    """
+    return render (request, '500.html', status=500)
