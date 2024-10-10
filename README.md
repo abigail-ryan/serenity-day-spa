@@ -113,12 +113,72 @@ Wireframes have been created for each page of the site.
 
 ##### Wireframes
 
-**DOCUMENTATION YET TO BE ADDED**
-* Homepage (featuring popular treatments)
-* Treatment menu (each treatment can be clicked on to view the full description including price and duration), 
-* Login/Registration form (simple layout for ease of use), 
-* User dashboard (showing appointments), 
-* Contact page (with clear fields for enquiries).
+<details>
+<summary>Home</summary>
+<br>
+Homepage (featuring popular treatments)
+
+| Mobile View | Desktop View |
+| ---| ---|
+| ![Screenshot of Serenity Day Spa mobile view wireframe - index page](documentation/mobile-home.png) | ![Screenshot of Serenity Day Spa desktop view wireframe - index page](documentation/desktop-home.png) |
+</details>
+
+<details>
+<summary>Treatments List</summary>
+<br>
+Each treatment can be clicked on to view the full description including price and duration.
+
+| Mobile View | Desktop View |
+| ---| ---|
+| ![Screenshot of Serenity Day Spa mobile view wireframe - treatments list](documentation/mobile-treatments-list.png) | ![Screenshot of Serenity Day Spa desktop view wireframe - treatments list](documentation/desktop-treatments-list.png) |
+</details>
+
+<details>
+<summary>Treatment Details</summary>
+<br>
+Each treatment can be clicked on to view the full description including price and duration.
+
+| Mobile View | Desktop View |
+| ---| ---|
+| ![Screenshot of Serenity Day Spa mobile view wireframe - treatment details](documentation/mobile-treatments-list.png) | ![Screenshot of Serenity Day Spa desktop view wireframe - treatments details](documentation/desktop-treatments-list.png) |
+</details>
+
+<details>
+<summary>Sign in</summary>
+<br>
+
+| Mobile View | Desktop View |
+| ---| ---|
+| ![Screenshot of Serenity Day Spa mobile view wireframe - index page](documentation/mobile-signin.png) | ![Screenshot of Serenity Day Spa desktop view wireframe - index page](documentation/desktop-signin.png) | 
+</details>
+
+<details>
+<summary>Registration form</summary>
+<br>
+
+| Mobile View | Desktop View |
+| ---| ---|
+| ![Screenshot of Serenity Day Spa mobile view wireframe - index page](documentation/wf_Mobile_hero_Section.PNG) | ![Screenshot of Serenity Day Spa desktop view wireframe - index page](documentation/wf_Mobile_Navigation_menu.PNG) | 
+</details>
+
+<details>
+<summary>User dashboard</summary>
+<br>
+
+| Mobile View | Desktop View |
+| ---| ---|
+| ![Screenshot of Serenity Day Spa mobile view wireframe - index page](documentation/wf_Mobile_hero_Section.PNG) | ![Screenshot of Serenity Day Spa desktop view wireframe - index page](documentation/wf_Mobile_Navigation_menu.PNG) | 
+</details>
+
+<details>
+<summary>Contact page</summary>
+<br>
+
+| Mobile View | Desktop View |
+| ---| ---|
+| ![Screenshot of Serenity Day Spa mobile view wireframe - index page](documentation/wf_Mobile_hero_Section.PNG) | ![Screenshot of Serenity Day Spa desktop view wireframe - index page](documentation/wf_Mobile_Navigation_menu.PNG) | 
+</details>
+
 
 #### Surface
 
