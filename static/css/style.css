@@ -2,30 +2,45 @@ body {
     background-color: white;
 }
 
-.brand {
-    font-family: Lato, sans-serif;
-    font-size: 1.4rem;
-    font-weight: 700;
-    color: #4A4A4F;
+h1, h2, h3, h4 {
+    margin-top: 25px;
 }
 
-.red-o {
-    color: #E84610;
+.navbar-brand, .footer-brand {
+    font-family: Dancing Script, sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
 }
 
 .thin {
     font-weight: 300;
 }
 
-.light-bg {
-    background-color: #fff;
+.card {
+    background-color: #fafcf0;
 }
 
-.dark-bg {
+/* .dark-bg {
     background-color: #445261;
+} */
+li > .nav-btn {
+    background-color: #13FBE2;
+    border: #13FBE2;
+    color: black;
+    font-size: large;
+    font-weight: 500;
+    border-radius: 0.25rem;
+    padding: 8px 12px;
+    text-decoration: none;
+    margin-left: 15px;
 }
 
-nav > button, li {
+li > .nav-btn:hover {
+    background-color: #0f9e90;
+    color: white;
+}
+
+nav > li {
     color: white;
 }
 
@@ -39,20 +54,11 @@ nav > button, li {
 
 .navbar-brand, .nav-link {
     color: white;
+    margin: 0, 10px;
 }
 
 .navbar-brand:hover {
     color: #13FBE2; 
-}
-
-.nav-link > button {
-    background-color: #13FBE2;
-    border: #13FBE2;
-    color: black;
-    font-size: large;
-    border-radius: 0.25rem;
-    padding: .375rem .75rem;
-
 }
 
 .nav-link.active {
@@ -100,14 +106,23 @@ nav > button, li {
     background-color: white;
 }
 
-/* .carousel-overlay {
-    z-index: 2;
-    background-color: rgba(0, 0, 0, 0.5);
-} */
-
 .carousel-caption {
     z-index: 1;
     background-color: rgba(0, 130, 145, 0.5);
+}
+
+.carousel-caption > h1 {
+    font-family: Dancing Script, sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+}
+/* .hero {
+    /* margin: 15px; */
+
+.hero-logo {
+    font-family: Dancing Script, sans-serif;
+    font-size: 2rem;
+    margin: 5px;
 }
 
 .card {
@@ -115,67 +130,60 @@ nav > button, li {
     background-color: transparent;
 }
 
+.btn-sm {
+    background-color: #daa486;
+    color: white;
+    border-color: #daa486;
+}
+
+.btn-sm:hover {
+    background-color: #ac7f67;
+    border-color: #8f6a56;
+}
+
+.btn-primary {
+    color: white;
+    background-color: #008291;
+    border-color: #008291;
+}
+
+.btn-primary:hover {
+    color: white;
+    background-color: #005963;
+    border-color: #005963;
+}
+.hero-text, .about {
+    background-color: #fafcf0;
+    padding: 15px;
+}
+
+.about-image {
+    max-width: 75%;
+    border-radius: 50%;
+}
+
 .image-container {
     position: relative;
 }
 
-.image-flash {
+/* .image-flash {
     position: absolute;
     bottom: 5%;
     min-width: 30%;
     left: -2px;
     background-color: #188181;
-}
-
-.scale {
-    width: 100%;
-    height: auto;
-}
-
-/* .author {
-    color: white;
-    margin: 4px;
-    text-transform: uppercase;
-}
-
-.masthead {
-    margin-top: 10px;
-    overflow: hidden;
-    position: relative;
-    display: inline-block;
-    height: 33vh;
-    width: 100%;
-}
-
-.masthead-text {
-    background-color: #445261;
-    color: white;
-    position: relative;
-}
-
-.masthead-image {
-    position: relative;
-    overflow: hidden;
-}
-
-.masthead-image:after {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 90%;
-    height: 100%;
-    width: 150%;
-    background: #445261;
-    -webkit-transform: skew(15deg);
-    -moz-transform: skew(15deg);
-    transform: skew(15deg);
-    z-index: 100;
 } */
 
-.post-link {
+/* .scale {
+    width: 100%;
+    height: auto;
+} */
+
+
+/* .post-link {
     text-decoration: none;
     color: #445261;
-}
+} */
 
 .post-link:hover,
 .page-link {
@@ -227,7 +235,17 @@ nav > button, li {
     color: #fff;
     background: #E84610;
 }
+footer {
+    padding-top: 15px;
+}
 
+footer a {
+    color: white;
+}
+
+footer a:hover {
+    color: #13FBE2; 
+}
 /* .btn-like:hover,
 .btn-like:active {
     color: #E84610;
@@ -242,3 +260,14 @@ nav > button, li {
 /* .approval {
     color: rgb(222, 146, 168);
 } */
+
+/* Media query for tablet and larger screens */
+@media screen and (min-width: 768px){
+.carousel-caption > h1 {
+    font-size: 4rem;
+}
+
+.navbar-brand {
+    font-size: 2rem;
+}
+}
