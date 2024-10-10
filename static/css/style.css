@@ -186,8 +186,10 @@ nav > li {
     color: lightgray;
 } */
 
-.btn-signup, .btn-contact,
-.btn-edit {
+.btn-signup, 
+.btn-contact,
+.btn-edit,
+.btn-cancel {
     background-color: #daa486;
     color: black;
 }

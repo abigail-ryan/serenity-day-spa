@@ -186,8 +186,10 @@ nav > li {
     color: lightgray;
 } */
 
-.btn-signup, .btn-contact,
-.btn-edit {
+.btn-signup, 
+.btn-contact,
+.btn-edit,
+.btn-cancel {
     background-color: #daa486;
     color: black;
 }
@@ -226,20 +228,20 @@ footer a {
 footer a:hover {
     color: #13FBE2; 
 }
-/* .btn-like:hover,
-.btn-like:active {
-    color: #E84610;
-    background: transparent;
-    border: none;
-} */
 
-/* .faded {
-    color: rgb(172, 175, 175);
-} */
+.success {
+    background-color: #13FBE2;
+    border-radius: 4px;
+    padding: 10px;
+}
 
-/* .approval {
-    color: rgb(222, 146, 168);
-} */
+
+.error {
+    background-color: #f00101;
+    color: white;
+    border-radius: 4px;
+    padding: 10px;
+} 
 
 /* Media query for tablet and larger screens */
 @media screen and (min-width: 768px){
