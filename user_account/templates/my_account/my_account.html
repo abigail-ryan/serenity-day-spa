@@ -3,28 +3,29 @@
 
 {% block content %}
 
-    <div class="container">
+    <div class="container" role="region" aria-labelledby="appointmentsHeading">
         <div class="row justify-content-center">
             <div class="col-12 col-md-8 my-5">
                 <h2><strong>My Details:</strong></h2>
                 <p><strong>Name: </strong>{{ user.first_name }} {{ user.last_name }}</p>
                 <p><strong>Phone: </strong>{{ user.phone }}</p>
                 <p><strong>Email: </strong>{{ user.email }}</p>
-                <hr>
+                
         
                 <!--Appointment Loop-->
         
-                <h2><strong>My Appointments:</strong></h2>
+                <h2 id="appointmentsHeading" role="heading"><strong>My Appointments:</strong></h2>
+                <hr>
                 {% if appointments.count > 0 %}
                     <div class="col-lg-8 col-md-6 my-5">
                         {% for appointment in appointments %}
-                        <div class="list-group fs-4 border p-3 mb-3">
-                            <p class="list-group mt-2"><strong>{{ appointment.treatment }}</strong></p>
-                            <p class="list-group mt-2">Date: {{ appointment.day }}</p>
-                            <p class="list-group mt-2">Time: {{ appointment.time }}</p>
+                        <div class="list-group fs-4 border p-3 mb-3" role="list">
+                            <p class="list-group mt-2" role="listitem"><strong>{{ appointment.treatment }}</strong></p>
+                            <p class="list-group mt-2" role="listitem">Date: {{ appointment.day }}</p>
+                            <p class="list-group mt-2" role="listitem">Time: {{ appointment.time }}</p>
                             <div class="mt-3 mb-2">
-                                <a href="{% url 'booking-edit' appointment.id %}" class="btn btn-edit">Edit</a> |
-                                <a href="{% url 'booking-delete' appointment.id %}" class="btn btn-delete">Delete</a>
+                                <a href="{% url 'booking-edit' appointment.id %}" class="btn btn-edit" role="button" aria-label="Edit Appointment">Edit</a> |
+                                <a href="{% url 'booking-delete' appointment.id %}" class="btn btn-delete" role="button" aria-label="Delete Appointment">Delete</a>
                             </div>
                         </div>
                         {% endfor %}
@@ -32,10 +33,10 @@
                 {% else %}
                     <div class="row justify-content-center"></div>
                         <div class="col-12 col-md-8 my-5">
-                            <p><strong>{{ user.username }}, </strong> you have no appointments.</p>
+                            <p role="alert"><strong>{{ user.username }}, </strong> you have no appointments.</p>
                         </div>
                         <div class="mt-3 mb-2">
-                            <a class="btn btn-primary rounded-3 p-2" href="{% url 'booking' %}">Book now</a>
+                            <a class="btn btn-primary rounded-3 p-2" href="{% url 'booking' %}" role="button" aria-label="Book Now">Book Now</a>
                         </div>
                     </div>
 

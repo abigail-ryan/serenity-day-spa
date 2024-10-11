@@ -4,20 +4,20 @@
 
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-12 col-md-8 my-5">
-        <h2><strong>Are you sure you want to delete this appointment?</strong></h2>
+        <div class="col-12 col-md-8 my-5" role="dialog" aria-labelledby="deleteAppointmentTitle" aria-describedby="deleteAppointmentDescription">
+        <h2 id="deleteAppointmentTitle" role="heading"><strong>Are you sure you want to delete this appointment?</strong></h2>
         <br>
 
-        <p>{{ appointment.treatment }}</p>
+        <p id="deleteAppointmentDescription">{{ appointment.treatment }}</p>
         <p>Date: {{ appointment.day}}</p>
         <p>Time: {{ appointment.time }}</p>
 
         <form method="post">
             {% csrf_token %}
-            <button class="btn btn-danger" type="submit">Confirm Delete</button>
+            <button class="btn btn-danger" type="submit" aria-label="Confirm Delete Appointment">Confirm Delete</button>
         </form>
         <br>
-        <a class="btn btn-cancel" href="{% url 'my-account' %}">Cancel</a>
+        <a class="btn btn-cancel" href="{% url 'my-account' %}" role="button" aria-label="Cancel Appointment Deletion">Cancel</a>
         </div>
     </div>
 </div>

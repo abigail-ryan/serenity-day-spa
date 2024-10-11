@@ -6,14 +6,14 @@
 
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-12 col-md-6 my-5">
-            <h2><strong>Get in touch.</strong></h2>
-            <p>Let me know how I can help you!</p>
+        <div class="col-12 col-md-6 my-5" role="form" aria-labelledby="contactFormTitle" aria-describedby="contactFormDescription">
+            <h2 id="contactFormTitle" role="heading"><strong>Get in touch.</strong></h2>
+            <p id="contactFormDescription">Let me know how I can help you!</p>
 
-            <form method="post">
+            <form method="post" aria-labelledby="contactFormTitle">
                 {{ contact_form | crispy }}
                 {% csrf_token %}
-                <button class="btn btn-contact" type="submit">Submit</button>
+                <button class="btn btn-contact" type="submit" role="button" aria-label="Submit">Submit</button>
             </form>
         </div>
     </div>

@@ -26,8 +26,8 @@
             <!-- Back to all treatments link + Book Now/Login/Register Links  -->
             <p><strong><em><a href="{% url 'treatments' %}" class="link">&larr; Back to all treatments</a></em></strong></p>
             <p>{% if user.is_authenticated %}
-            <a href="{% url 'booking' %}" class="btn btn-primary">Book now</a>
-            {% else %}<em>Please</em> <strong><a class="link" href="{{ login_url }}">Login</strong></a> or <strong><a class="link" href="{{ signup_url }}">Register</strong></a><em> to book</em></a></p>
+            <a href="{% url 'booking' %}" class="btn btn-primary" role="button" aria-label="Back to all Treatments">Book now</a>
+            {% else %}<em>Please</em> <strong><a class="link" href="{{ login_url }}" role="button" aria-label="Login">Login</strong></a> or <strong><a class="link" href="{{ signup_url }}" role="button" aria-label="Register">Register</strong></a><em> to book</em></a></p>
             {% endif %}
         </div>
     </div>
