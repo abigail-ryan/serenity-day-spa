@@ -1,10 +1,10 @@
 # Serenity Day Spa 
-[View my live site here](https://)
+[View my live site here](https://serenity-day-spa-c4459ce39df8.herokuapp.com/)
 
 Serenity Day Spa is a site for a fictional new business based in the South East coastal town of Tramore, Co. Waterford, Ireland. The Spa is centered around offering treatments to customers looking to book a relaxing appointment to escape and unwind. Serenity Day Spa provides users with a treatment menu, account registration, and booking process.
 Unregistered users of this site can access all the information they need to know about Serenity Day Spa treatments, and can contact the site owners with any queries they may have via a contact form. Registered account users can book, edit and cancel their appointments via their user account dashboard, and also contact the site admin via the contact form.
 
-![Screenshot of Serenity Day Spa responsive design through Am I responsive website](documentation/responsive_screenshot.PNG)
+![Screenshot of Serenity Day Spa responsive design through Am I responsive website](documentation/serenity-day-spa-responsive.png)
 
 ## Contents
 * [Project Goals](#project-goals)
