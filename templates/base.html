@@ -60,11 +60,11 @@
                     </li>
                     {% if user.is_authenticated %}
                     <li class="nav-item">
-                        <a class="nav-link {% if request.path == booking_url %}active{% endif %}" aria-current="page"
+                        <a class="nav-link {% if request.path == '/booking/' %}active{% endif %}" aria-current="page"
                             href="{% url 'booking' %}">Book Now <i class="bi bi-journal-plus ms-1 me-2"></i></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {% if request.path == user_account_url %}active{% endif %}" aria-current="page"
+                        <a class="nav-link {% if request.path == '/my-account/' %}active{% endif %}" aria-current="page"
                             href="{% url 'my-account' %}">My Account <i class="bi bi-person-circle ms-1 me-2"></i></a>
                     </li>
                     <li class="nav-item">

@@ -5,7 +5,7 @@ from django.conf.urls import handler500
 from .views import custom_handler404, custom_handler500
 
 urlpatterns = [
-    path('booking', views.BookingView.as_view(), name='booking'),
+    path('booking/', views.BookingView.as_view(), name='booking'),
     path('booking/edit/<int:pk>/', views.BookingEdit.as_view(), name='booking-edit'),
     path('booking/delete/<int:pk>/', views.DeleteBooking.as_view(), name='booking-delete'),
 ]
