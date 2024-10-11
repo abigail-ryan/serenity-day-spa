@@ -109,9 +109,9 @@ ___
 
 #### Skeleton
 
-Wireframes have been created for each page of the site.
+Wireframes have been created for each page of the site using [Uizard](https://uizard.io/).
 
-##### Wireframes
+##### Wireframes:
 
 <details>
 <summary>Home</summary>
@@ -140,7 +140,7 @@ Each treatment can be clicked on to view the full description including price an
 
 | Mobile View | Desktop View |
 | ---| ---|
-| ![Screenshot of Serenity Day Spa mobile view wireframe - treatment details](documentation/mobile-treatments-list.png) | ![Screenshot of Serenity Day Spa desktop view wireframe - treatments details](documentation/desktop-treatments-list.png) |
+| ![Screenshot of Serenity Day Spa mobile view wireframe - treatment details](documentation/mobile-treatment-details.png) | ![Screenshot of Serenity Day Spa desktop view wireframe - treatments details](documentation/desktop-treatment-detail.png) |
 </details>
 
 <details>
@@ -149,7 +149,7 @@ Each treatment can be clicked on to view the full description including price an
 
 | Mobile View | Desktop View |
 | ---| ---|
-| ![Screenshot of Serenity Day Spa mobile view wireframe - index page](documentation/mobile-signin.png) | ![Screenshot of Serenity Day Spa desktop view wireframe - index page](documentation/desktop-signin.png) | 
+| ![Screenshot of Serenity Day Spa mobile view wireframe - sign in](documentation/mobile-signin.png) | ![Screenshot of Serenity Day Spa desktop view wireframe - sign in](documentation/desktop-signin.png) | 
 </details>
 
 <details>
@@ -158,7 +158,7 @@ Each treatment can be clicked on to view the full description including price an
 
 | Mobile View | Desktop View |
 | ---| ---|
-| ![Screenshot of Serenity Day Spa mobile view wireframe - index page](documentation/wf_Mobile_hero_Section.PNG) | ![Screenshot of Serenity Day Spa desktop view wireframe - index page](documentation/wf_Mobile_Navigation_menu.PNG) | 
+| ![Screenshot of Serenity Day Spa mobile view wireframe - register](documentation/mobile-register.png) | ![Screenshot of Serenity Day Spa desktop view wireframe - register](documentation/desktop-register.png) | 
 </details>
 
 <details>
@@ -167,7 +167,7 @@ Each treatment can be clicked on to view the full description including price an
 
 | Mobile View | Desktop View |
 | ---| ---|
-| ![Screenshot of Serenity Day Spa mobile view wireframe - index page](documentation/wf_Mobile_hero_Section.PNG) | ![Screenshot of Serenity Day Spa desktop view wireframe - index page](documentation/wf_Mobile_Navigation_menu.PNG) | 
+| ![Screenshot of Serenity Day Spa mobile view wireframe - user account](documentation/mobile-my-account.png) | ![Screenshot of Serenity Day Spa desktop view wireframe - user account](documentation/desktop-my-account.png) | 
 </details>
 
 <details>
@@ -176,7 +176,7 @@ Each treatment can be clicked on to view the full description including price an
 
 | Mobile View | Desktop View |
 | ---| ---|
-| ![Screenshot of Serenity Day Spa mobile view wireframe - index page](documentation/wf_Mobile_hero_Section.PNG) | ![Screenshot of Serenity Day Spa desktop view wireframe - index page](documentation/wf_Mobile_Navigation_menu.PNG) | 
+| ![Screenshot of Serenity Day Spa mobile view wireframe - contact](documentation/mobile-contact.png) | ![Screenshot of Serenity Day Spa desktop view wireframe - contact](documentation/desktop-contact.png) | 
 </details>
 
 
@@ -194,9 +194,9 @@ ___
 
 Given that Serenity Day Spa is situated in a coastal town and offers treatments that incorporate natural elements, I selected a color palette from Canva Colors that features soft sandy tones complemented by shades of blue and green.
 
-**My Chosen Colors:**
+ ![Screenshot of Serenity Day Spa colour palette](documentation/serenity-colour-pallete.png) 
 
-**COLOUR PALETTE TO BE ADDED HERE**
+**My Chosen Colors:**
 
 * Brown: #daa486 (representing sandy hues)
 * Cream: #fafcf0 (evoking a sense of warmth and comfort)
@@ -209,13 +209,13 @@ I chose the following typography for my project:
 * Dancing Script - as it’s a lively cursive font with a friendly and inviting feel. It is used for the headings throughout the site.
 * Roboto: clean and modern with excellent readability. Used throughout the entire site for all text elements.
 
-**FONTJOY SCREENSHOT TO BE ADDED HERE**
+![Screenshot of FontJoy font pairing](documentation/font-joy-font-pairing.png) 
 
 #### Imagery
 
 To create the Spa's interior images for my project, I utilised an AI image generator [DeepAI](https://deepai.org/machine-learning-model/text2img), guided by the color palette I selected. The soft sandy tones, along with the natural blues and greens, inspired the visual elements, ensuring they align with the serene and coastal theme of Serenity Day Spa.
 
-The media used throughout Serenity Day Spa Treatments were sourced from (images sources placed here). Attributions are placed in the Credits section of this README.
+The media used throughout Serenity Day Spa Treatments were sourced from [Pexels](https://www.pexels.com/) & [Freepik](https://www.freepik.com/). Attributions are placed in the Credits section of this README.
 
 ____
 
