@@ -12,93 +12,97 @@
 <html class="h-100" lang="en">
 
 <head>
-    <title>Serenity Day Spa</title>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <meta name="description"
+        content="Serenity Day Spa is a new Spa nestled in the coastal town of Tramore, offering treatments infused with the natural elements of the sea. Register an account and book your escape to Serenity today!">
+    <meta name="keywords" content="day spa, relaxation, spa retreat, spa treatments, spa Tramore, sea salt treatments, seaweed, spa Co. Waterford">
+    
     <!-- Google Fonts CSS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
 
     <!-- Bootstrap Icons CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-
+ 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    <title>Serenity Day Spa</title>
 </head>
 
 <body class="d-flex flex-column h-100 main-bg">
-
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="{% url 'home' %}"><span>Serenity Day Spa</span></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
-                aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarText">
-                <ul class="navbar-nav nav-underline me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link {% if request.path == home_url %}active{% endif %}" aria-current="page"
-                            href="{% url 'home' %}">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link {% if request.path == '/treatments/' %}active{% endif %}" aria-current="page"
-                            href="{% url 'treatments' %}">Treatments</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link {% if request.path == '/contact/' %}active{% endif %}" aria-current="page"
-                            href="{% url 'contact' %}">Contact</a>
-                    </li>
-                    {% if user.is_authenticated %}
-                    <li class="nav-item">
-                        <a class="nav-link {% if request.path == '/booking/' %}active{% endif %}" aria-current="page"
-                            href="{% url 'booking' %}">Book Now <i class="bi bi-journal-plus ms-1 me-2"></i></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link {% if request.path == '/my-account/' %}active{% endif %}" aria-current="page"
-                            href="{% url 'my-account' %}">My Account <i class="bi bi-person-circle ms-1 me-2"></i></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link {% if request.path == logout_url %}active{% endif %}" aria-current="page" 
-                        href="{% url 'account_logout' %}">Logout <i class="bi bi-box-arrow-right ms-1 me-2"></i></a>
-                    </li>
-                    {% else %}
-                    <li class="nav-item">
-                        <a class="nav-link {% if request.path == login_url %}active{% endif %}" aria-current="page" 
-                        href="{% url 'account_login' %}">Sign in <i class="bi bi-person-circle ms-1 me-2"></i></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-btn {% if request.path == signup_url %}active{% endif %}" aria-current="page"
-                            href="{% url 'account_signup' %}">Register <i class="bi bi-person-add"></i></a>
-                    </li>
-                    {% endif %}
-                </ul>
-            </div>
-        </div>
-    </nav>
-    <div class="container"></div>
-        <div class="row">
-            <div class="col-md-8 offset-md-2">
-                {% for message in messages %}
-                <div class="alert {{ message.tags }} alert-dismissible fade show" id="msg" role="alert">
-                    {{ message | safe }}
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    <header role="banner">
+        <nav class="navbar navbar-expand-lg" role="navigation">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="{% url 'home' %}"><span>Serenity Day Spa</span></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+                    aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarText">
+                    <ul class="navbar-nav nav-underline me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.path == home_url %}active{% endif %}" aria-current="page"
+                                href="{% url 'home' %}">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.path == '/treatments/' %}active{% endif %}" aria-current="page"
+                                href="{% url 'treatments' %}">Treatments</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.path == '/contact/' %}active{% endif %}" aria-current="page"
+                                href="{% url 'contact' %}">Contact</a>
+                        </li>
+                        {% if user.is_authenticated %}
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.path == '/booking/' %}active{% endif %}" aria-current="page"
+                                href="{% url 'booking' %}">Book Now <i class="bi bi-journal-plus ms-1 me-2"></i></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.path == '/my-account/' %}active{% endif %}" aria-current="page"
+                                href="{% url 'my-account' %}">My Account <i class="bi bi-person-circle ms-1 me-2"></i></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.path == logout_url %}active{% endif %}" aria-current="page" 
+                            href="{% url 'account_logout' %}">Logout <i class="bi bi-box-arrow-right ms-1 me-2"></i></a>
+                        </li>
+                        {% else %}
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.path == login_url %}active{% endif %}" aria-current="page" 
+                            href="{% url 'account_login' %}">Sign in <i class="bi bi-person-circle ms-1 me-2"></i></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-btn {% if request.path == signup_url %}active{% endif %}" aria-current="page"
+                                href="{% url 'account_signup' %}">Register <i class="bi bi-person-add"></i></a>
+                        </li>
+                        {% endif %}
+                    </ul>
                 </div>
-                {% endfor %}
             </div>
-        </div>
-   
+        </nav>
+        <div class="container"></div>
+            <div class="row">
+                <div class="col-md-8 offset-md-2">
+                    {% for message in messages %}
+                    <div class="alert {{ message.tags }} alert-dismissible fade show" id="msg" role="alert">
+                        {{ message | safe }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+    </header>
 
-    <main class="flex-shrink-0 main-bg">
+    <main class="flex-shrink-0 main-bg" role="main">
         {% if user.is_authenticated %}
             <p class="text-end m-3">Welcome back {{ user.username }}!</p>
         {% endif %}
@@ -109,11 +113,11 @@
 
     </main>
 
-<!-- Footer --> 
-    <footer class="container-fluid text-center text-white">
+    <!-- Footer --> 
+    <footer class="container-fluid text-center text-white" role="contentinfo">
         <div class="row">
         <div class="col-lg-4 col-md-4">
-            <h5><i class="bi bi-geo me-3"></i>Location</h5>
+            <h5 role="heading"><i class="bi bi-geo me-3"></i>Location</h5>
             <ul class="list-unstyled text-small">
             <li>11 Cliff Road</li>
             <li>Tramore, Co. Waterford</li>
@@ -121,14 +125,14 @@
             </ul>
         </div>
         <div class="col-lg-4 col-md-4">
-            <h5><i class="bi bi-telephone-inbound me-3"></i>Contact</h5>
+            <h5 role="heading"><i class="bi bi-telephone-inbound me-3"></i>Contact</h5>
             <ul class="list-unstyled text-small">
             <li>087-4561398</li>
             <li>info@serenity.com</li>
             </ul>
         </div>
         <div class="col-lg-4 col-md-4">
-            <h5><i class="bi bi-hand-thumbs-up me-3"></i>Follow Us</h5>
+            <h5 role="heading"><i class="bi bi-hand-thumbs-up me-3"></i>Follow Us</h5>
             <p class="list-unstyled text-small">
             <a href="https://www.facebook.com" target="_blank" rel="noopener"
                 aria-label="Follow us on Facebook (opens in a new tab)"><i class="bi bi-facebook ms-3"></i></a>
@@ -139,7 +143,7 @@
             </p>
         </div>
         <div class="col-lg-12 col-md-12 col-sm-4 text-center">
-            <h4 class="footer-brand">Serenity Day Spa</h4>
+            <h4 class="footer-brand" role="heading">Serenity Day Spa</h4>
             <small class="d-block mb-3">&copy; 2024</small>
         </div>
         </div>
