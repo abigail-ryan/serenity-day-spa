@@ -10,19 +10,7 @@ class TreatmentList(generic.ListView):
 
 
 def treatment_details(request, slug):
-    """
-    Display an individual :model:`treatments.Treatment`.
-
-    **Context**
-
-    ``treatment``
-        An instance of :model:`treatments.Treatment`.
-
-    **Template:**
-
-    :template:`treatments/treatment_details.html`
-    """
-
+    
     queryset = Treatment.objects.filter(status=1)
     treatment = get_object_or_404(queryset, slug=slug)
 

@@ -1,6 +1,9 @@
 {% extends 'base.html' %}
+
 {% block content %}
+
 {% load static %}
+
 <div class="container mt-5">
     <div class="row">
         <div class="col-lg-4 col-md-6 col-12 text-center">
@@ -27,6 +30,6 @@
             {% else %}<em>Please</em> <strong><a class="link" href="{{ login_url }}">Login</strong></a> or <strong><a class="link" href="{{ signup_url }}">Register</strong></a><em> to book</em></a></p>
             {% endif %}
         </div>
-      </div>
+    </div>
 </div>
 {% endblock content %}

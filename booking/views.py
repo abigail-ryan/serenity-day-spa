@@ -8,6 +8,7 @@ from .models import Appointment, Treatment
 from datetime import datetime, timedelta
 
 # Create your views here.
+# Code for BookingView, BookingEdit & DeleteBooking credited in README
 
 class BookingView(LoginRequiredMixin, FormView):
     template_name = 'booking/booking.html'
@@ -19,9 +20,7 @@ class BookingView(LoginRequiredMixin, FormView):
         existing_appointments = Appointment.objects.filter(day=day, time=time)
         if current_appointment:
             existing_appointments = existing_appointments.exclude(pk=current_appointment.pk)
-            # Debugging output to see which appointments are being checked
-        print(f"Checking availability for day: {day}, time: {time}")
-        print(f"Existing appointments: {[appt.pk for appt in existing_appointments]}")
+      
         return not existing_appointments.exists()
 
 
