@@ -21,6 +21,7 @@ Unregistered users of this site can access all the information they need to know
   * [Colour Scheme](#colour-scheme)
   * [Typography](#typography)
   * [Imagery](#imagery)
+* [Database ERD](#database-erd)
 * [Project Features](#project-features)
   * [Home](#home)
   * [Treatments](#treatments)
@@ -219,8 +220,22 @@ The media used throughout Serenity Day Spa Treatments were sourced from [Pexels]
 
 ____
 
+### Database ERD
+
+![Screenshot of Serenity Day Spa Database](documentation/database-erd.png) 
+
+I created my Database Entity Relationship Diagram to demonstrate the booking process for registered users.
+* My initial User entity was created with the intention of allowing users to edit their details in the My Account dashboard, however due to my own time constraints I have chosen to add editing user details as a Future Feature for further development of this project at a later stage. The fields include user id PrimaryKey that is generated automatically upon registration, first name, last name, email and phone.
+* Each Treatment entity represents the individual treatment details that are displayed to the user on the front end. The treatment id PrimaryKey is automatically generated, treatment name, slug, description, excerpt, price, duration, requirements and requirement details to display to the user, and status which allow admin to create drafts of new treatments ready for publishing later.
+* The Appointment entity represents a booking made by a user for a specific treatment, with the appointment id as the PrimaryKey generated automatically, user and treatment as the ForeignKeys referenceing the User and Treatment entities, first name, last name, email, phone, day, time, and notes for the user to notify of any skin sensitivities/allergies.
+* The Contact entity represents the contact form that all site users can access. Admin can store and manage contact forms, and mark forms as ready with the status field. For future development and security this form will require user authentication to prevent spam/bot attacks.
+
+This data scheme allows admin to manage users, treatments, bookings and contact forms. 
+____
+
 ### Project Features
 #### Home
+#### Navbar
 #### Treatments List
 #### Treatment Details
 #### Contact
