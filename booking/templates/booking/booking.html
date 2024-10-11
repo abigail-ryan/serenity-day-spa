@@ -7,10 +7,10 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-12 col-md-8 my-5" role="dialog" aria-labelledby="bookAppointmentTitle" aria-describedby="bookAppointmentDescription">
-            <h2 id="bookAppointmentTitle" role="heading"><strong>Book an Appointment</strong></h2>
+            <h2 id="bookAppointmentTitle"><strong>Book an Appointment</strong></h2>
             <p id="bookAppointmentDescription">Please fill out the form below to book your appointment.</p>
 
-            <form method="post" action="{% url 'booking' %}" role="form" aria-labelledby="bookAppointmentTitle">
+            <form method="post" action="{% url 'booking' %}">
                 {% csrf_token %}
                 {{ form | crispy }}
                 <button class="btn btn-primary" type="submit" aria-label="Book Now">Book Now</button>

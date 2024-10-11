@@ -40,8 +40,8 @@
 
 <body class="d-flex flex-column h-100 main-bg">
     <!-- Navigation -->
-    <header role="banner">
-        <nav class="navbar navbar-expand-lg" role="navigation">
+    <header>
+        <nav class="navbar navbar-expand-lg">
             <div class="container-fluid">
                 <a class="navbar-brand" href="{% url 'home' %}"><span>Serenity Day Spa</span></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
@@ -102,7 +102,7 @@
             </div>
     </header>
 
-    <main class="flex-shrink-0 main-bg" role="main">
+    <main class="flex-shrink-0 main-bg">
         {% if user.is_authenticated %}
             <p class="text-end m-3">Welcome back {{ user.username }}!</p>
         {% endif %}
@@ -114,10 +114,10 @@
     </main>
 
     <!-- Footer --> 
-    <footer class="container-fluid text-center text-white" role="contentinfo">
+    <footer class="container-fluid text-center text-white">
         <div class="row">
         <div class="col-lg-4 col-md-4">
-            <h5 role="heading"><i class="bi bi-geo me-3"></i>Location</h5>
+            <h5><i class="bi bi-geo me-3"></i>Location</h5>
             <ul class="list-unstyled text-small">
             <li>11 Cliff Road</li>
             <li>Tramore, Co. Waterford</li>
@@ -125,14 +125,14 @@
             </ul>
         </div>
         <div class="col-lg-4 col-md-4">
-            <h5 role="heading"><i class="bi bi-telephone-inbound me-3"></i>Contact</h5>
+            <h5><i class="bi bi-telephone-inbound me-3"></i>Contact</h5>
             <ul class="list-unstyled text-small">
             <li>087-4561398</li>
             <li>info@serenity.com</li>
             </ul>
         </div>
         <div class="col-lg-4 col-md-4">
-            <h5 role="heading"><i class="bi bi-hand-thumbs-up me-3"></i>Follow Us</h5>
+            <h5><i class="bi bi-hand-thumbs-up me-3"></i>Follow Us</h5>
             <p class="list-unstyled text-small">
             <a href="https://www.facebook.com" target="_blank" rel="noopener"
                 aria-label="Follow us on Facebook (opens in a new tab)"><i class="bi bi-facebook ms-3"></i></a>
@@ -143,7 +143,7 @@
             </p>
         </div>
         <div class="col-lg-12 col-md-12 col-sm-4 text-center">
-            <h4 class="footer-brand" role="heading">Serenity Day Spa</h4>
+            <h4 class="footer-brand">Serenity Day Spa</h4>
             <small class="d-block mb-3">&copy; 2024</small>
         </div>
         </div>

@@ -221,9 +221,10 @@ ____
 
 ### Project Features
 #### Home
-#### Treatments
+#### Treatments List
+#### Treatment Details
 #### Contact
-#### Login
+#### Sign in
 #### Register
 #### Book Now
 #### My Account - User
