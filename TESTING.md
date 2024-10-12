@@ -13,9 +13,60 @@ Return to the [README.md](README.md) file.
 * [Manual Testing](#manual-testing)
 * [Bugs](#bugs)
 
+____
+
 #### HTML Validation
+
+For testing my HTML for this project, I used the Validate by Direct Input option on W3C Markup Validation. 
+
+
+![Screenshot of Serenity Day Spa - HTML Validation Home Page](documentation/home-html-check.png) 
+
+I checked all pages of the site in this way and the results are below:
+
+| HTML Page | Errors | Warnings |
+| ---- | ------ | -------- | 
+| Home | None | None |
+| Treatments | None | None |
+| Contact | None | None |
+| Sign in | None | None |
+| Book Now | None | None |
+| My Account | None | None |
+| Logout | None | None |
+| Edit Booking | None | None |
+| Delete Booking | None | None |
+| Logout | None | None |
+| Error 404 | None | None |
+| Error 500 | None | None |
+| Register | 4 | None |
+
+The Register Page returned 4 errors as show below:
+
+![Screenshot of Serenity Day Spa - HTML Validation Register Page](documentation/register-page-errors.png) 
+
+As this was a standard AllAuth template, I was unable to make adjustments. For future development of this project I will investigate this further.
+
+____
+
 #### CSS Validation
+
+My CSS Validation check returned no errors.
+
+![Screenshot of Serenity Day Spa - CSS Validation](documentation/css-validation.png) 
+____
+
 #### Pep8 Validation
+
+____
+
 #### Lighthouse scores using Chrome Dev Tools
+
+____
+
 #### Manual Testing
+
+____
+
 #### Bugs
+
+____
