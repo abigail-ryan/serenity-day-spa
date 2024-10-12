@@ -39,12 +39,6 @@ Unregistered users of this site can access all the information they need to know
   * [Languages](#languages)
   * [Frameworks, Libraries, Technologies and Programs used](#frameworks-libraries-technologies-and-programs-used)
 * [Testing](#testing)
-  * [Manual Testing](#manual-testing)
-  * [HTML Validation](#html-validation)
-  * [CSS Validation](#css-validation-using-w3c-validation) 
-  * [Lighthouse scores using Chrome Dev Tools](#lighthouse-scores-using-chrome-dev-tools)
-  * [Pep8 Validation](#pep8-validation)
-  * [Bugs](#bugs)
 * [Deployment](#deployment)
   * [Forking the GitHub Repository](#forking-the-github-repository)
   * [Clone the GitHub Repository](#clone-the-github-repository)
@@ -501,12 +495,8 @@ The full list of installed packages can be found in the requirements.txt file in
 ____
 
 ### Testing
-#### Manual Testing
-#### HTML Validation
-#### CSS Validation
-#### Lighthouse scores using Chrome Dev Tools
-#### Pep8 Validation
-#### Bugs
+
+Please see all testing here: [TESTING.md](TESTING.md)
 
 ___
 
