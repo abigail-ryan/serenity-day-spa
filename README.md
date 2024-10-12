@@ -23,17 +23,15 @@ Unregistered users of this site can access all the information they need to know
   * [Imagery](#imagery)
 * [Database ERD](#database-erd)
 * [Project Features](#project-features)
+  * [Navbar](#navbar)  
   * [Home](#home)
-  * [Navbar](#navbar)
   * [Treatments](#treatments)
   * [Contact](#contact)
   * [Login](#login)
   * [Register](#register)
   * [Book Now](#book-now)
   * [My Account - User](#my-account)
-  * [Admin Dashboard](#admin-dashboard)
   * [User Feedback](#user-feedback)
-  * [CRUD Functionality](#crud-functionality)
 * [Future Features](#future-features)
 * [Technologies Used](#technologies-used)
   * [Languages](#languages)
@@ -236,31 +234,163 @@ This data scheme allows admin to manage users, treatments, bookings and contact 
 ____
 
 ### Project Features
-#### Home
-#### Navbar
-![Screenshot of Serenity Day Spa Navbar - unregistered users]() 
 
-![Screenshot of Serenity Day Spa Navbar - reguistered users logged in](documentation/navbar-logged-in.png) 
+#### Navbar
+
+The Navabr for unregistered/logged out users shows limited menu options, but with a clear call to action Register button beside the Sign In link, prompting new visitors to the site to register an account.
+
+![Screenshot of Serenity Day Spa Navbar - unregistered users](documentation/navbar-unregistered-users.PNG) 
+
+The Navbar changes for registerd users who have logged into their account, now with the added menu options of Book Now, My Account and Logout.
+
+![Screenshot of Serenity Day Spa Navbar - reguistered users logged in](documentation/navbar-registered-users.PNG) 
+
+#### Home
+
+**Hero Section**
+
+The Home page features a hero section that has a carousel of 4 of the Spa interior images along with the Sap logo overlay text.
+
+![Screenshot of Serenity Day Spa - hero section](documentation/hero-section.PNG) 
+
+**Welcome Section**
+
+Below that, a Welcome section which briefly introduces the Spa and its offerings, along with another prompt for users to book an appointment.
+
+![Screenshot of Serenity Day Spa - welcome section](documentation/welcome-section.PNG) 
+
+**Popular Treatments Section**
+
+The Popular Treatments sections show users the 3 most popular Treatments which users can click to view more about, directly from the home page. The View All Treatments CTA button encourages users to view all of the Spa's offerings.
+
+![Screenshot of Serenity Day Spa - popular treatments section](documentation/popular-treatments-imgs.PNG)
+![Screenshot of Serenity Day Spa - popular treatments section](documentation/popular-treatments-excerpts.PNG)  
+![Screenshot of Serenity Day Spa - view all treatments cta](documentation/view-all-cta.PNG)
+
+**About Section**
+
+The short About section introduces the team at Serenity, and reinforces the uniqueness of the Spa's use of natural elements. Again, users are ensouraged to book an appointment.
+
+![Screenshot of Serenity Day Spa - about section](documentation/about-section.PNG) 
+
+**Footer**
+
+The Foooter section gives users the exact location, along with contact information and prompts to follow the Spa on social media.
+
+![Screenshot of Serenity Day Spa - footer](documentation/footer-section.PNG) 
 
 #### Treatments List
+
+The Treatments page show users the same layout as the Popular Treatments section on the Home Page, keeping the layout familiar for users. Users can scroll down the page which displays the various treatment options and can click to view each one in more detail.
+
+![Screenshot of Serenity Day Spa  - treatments page](documentation/treatments-page.PNG) 
+
 #### Treatment Details
+
+Once the user clicks the View button on the treatments page, they are brought to the Threatment details page wich give the user a full description of the Treatment including the duration, cost and any requirments.
+
+Below the details, users can easily navigate Back to all Treatmants without having to scroll back up to the navbar.
+
+Logged in users see the Book now button at the end of the page prompting them to book an appointment.
+
+![Screenshot of Serenity Day Spa - treatments details logged in users](documentation/treatment-details-logged-in.PNG) 
+
+Unregistered users see a prompt to Login or Register to book.
+
+![Screenshot of Serenity Day Spa - treatments details logged out users](documentation/treatment-details-unregistered-user.PNG) 
+
 #### Contact
+
+All users can access the Contact page to send an enquiry to the admin.
+
+![Screenshot of Serenity Day Spa - contact form](documentation/contact-page.PNG) 
+
 #### Sign in
+
+The Sign in page encourages users who have not already got an account to Register first, with a direct link to the Register Page.
+The Sign in form is simple and straigt forward for users.
+
+![Screenshot of Serenity Day Spa - sign in](documentation/sign-in-page.PNG) 
+
 #### Register
+
+A simple Register page allows users to sign up with a username, optional email, and password. There is a link to the Sign in page if users have incorrectly navigated to the register page.
+
+![Screenshot of Serenity Day Spa - register](documentation/register-page.PNG) 
+
 #### Book Now
 
-Accessible to registered logged in users only
+Accessible to registered logged in users only, the booking form is simple and easy to operate. Users can select a treatment from the dropdown list, select a date from a calendar date picker, select their preferred time from the time dropdown, and lastly fill in their personal details. There is an optional notes section for users to notify the Spa of any skin sensitivities/allergies to be aware of.
 
 ![Screenshot of Serenity Day Spa Book Now Page - registered users logged in](documentation/book-now-page.png) 
+![Screenshot of Serenity Day Spa Book Now Page - booking form end](documentation/booking-form-end.png) 
 
 #### My Account - User
-![Screenshot of Serenity Day Spa Navbar - reguistered users logged in](documentation/my-account.png) 
 
-#### Admin Dashboard
+For logged in users, they can access their account page which show them a list of their Appointments. I had initially wanted to include the users details in the My Details section as seen in my wireframes, with editing capabilities, however due to my own time constraints I have chosen to remove it from this version of my project and add it to Future Features.
+
+The user can edit and delete their appointments as needed.
+
+![Screenshot of Serenity Day Spa - my account page](documentation/my-account.png) 
+
+**Edit Booking**
+
+When a user chooses to edit their appointment, they are brought to the Edit Appointment form that is the same as the Book Now form. The form is prepopulated with the users current appointment details. Users can pick a new treatment, date, time, and update ther personal details also.
+
+![Screenshot of Serenity Day Spa - edit appointment](documentation/edit-appointment.png) 
+![Screenshot of Serenity Day Spa - update appointment button](documentation/edit-update-button.png) 
+
+**Delete Booking**
+
+If users choose to delete their appointment, they first see a confirmation page asking if they are sure they want to detele this appointment. Once users click the Confirm Delete button they are returned to their account page and notified that the appointment was deleted successfully (see User Feedback section below).
+
+![Screenshot of Serenity Day Spa - confirm delete](documentation/delete-appointment-confirmation.png) 
+
+**Log Out**
+
+When a users is ready to log out, they can click on the Logout menu item in the Navbar. Users are asked to confirm they want to sign out.
+
+![Screenshot of Serenity Day Spa - confirm logout](documentation/confirm-log-out.png) 
+
 #### User Feedback
-#### CRUD Functionality
+<details>
+<summary>View all user feedback messages</summary>
+<br>
+
+**Successful Login**
+
+![Screenshot of Serenity Day Spa - successful login message](documentation/successful-signin-msg.PNG) 
+
+**Appointment Saved**
+
+![Screenshot of Serenity Day Spa - appointment saved message](documentation/appointment-saved-success-msg.png) 
+
+**Appointment Updated**
+
+![Screenshot of Serenity Day Spa - appointment updated message](documentation/appointment-update-msg.png) 
+
+**Appointment Deleted**
+
+![Screenshot of Serenity Day Spa - appointment deleted message](documentation/appointment-delete-success-msg.png) 
+
+**Successful Log Out**
+
+![Screenshot of Serenity Day Spa - successful logout message](documentation/successful-log-out-msg.PNG) 
+
+**Error Messages in Booking Form**
+
+![Screenshot of Serenity Day Spa - error message](documentation/error-msg-21-days-advance.png) 
+
+![Screenshot of Serenity Day Spa - error message](documentation/error-msg-day-time-already-exists.png)
+
+![Screenshot of Serenity Day Spa - error message](documentation/error-msg-tues-sat.png) 
+
+![Screenshot of Serenity Day Spa - error message](documentation/error-msg-date-full.png) 
+
+</details>
 
 ___
+
 
 ### Future Features
 
