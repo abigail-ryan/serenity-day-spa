@@ -32,6 +32,7 @@ Unregistered users of this site can access all the information they need to know
   * [Book Now](#book-now)
   * [My Account - User](#my-account)
   * [User Feedback](#user-feedback)
+  * [Custom Handler Pages](#custom-handler-pages)
 * [Future Features](#future-features)
 * [Technologies Used](#technologies-used)
   * [Languages](#languages)
@@ -390,6 +391,14 @@ When a users is ready to log out, they can click on the Logout menu item in the 
 
 </details>
 
+
+#### Custom Handler Pages
+
+I created custom 404 and 500 error pages which both contain Home Page buttons to redirect the users back to the home page.
+
+![Screenshot of Serenity Day Spa - custom 404 page](documentation/custom-404-page.png) 
+
+![Screenshot of Serenity Day Spa - custom 500 page](documentation/custom-server-error.png) 
 ___
 
 
