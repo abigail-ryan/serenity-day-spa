@@ -46,9 +46,12 @@ Unregistered users of this site can access all the information they need to know
   * [Pep8 Validation](#pep8-validation)
   * [Bugs](#bugs)
 * [Deployment](#deployment)
-  * [Deploying to Heroku](#Deploying-to-heroku)
   * [Forking the GitHub Repository](#forking-the-github-repository)
   * [Clone the GitHub Repository](#clone-the-github-repository)
+  * [Django Project Setup](#django-project-setup)
+  * [Database Creation](#database-creation)
+  * [Cloudinary](#cloudinary)
+  * [Deploying to Heroku](#Deploying-to-heroku)
 * [Credits](#credits)
   * [Code References](#code-references)
   * [Content and Media References](#content-and-media-references)
@@ -508,9 +511,88 @@ ____
 ___
 
 ### Deployment
-#### Deploying to Heroku
+
 #### Forking the GitHub Repository
+
+By forking the GitHub repository you can make a copy of the original repository to your own GitHub account. You can view and make changes to this copy, without affecting the original repository.
+Use the following steps to copy a repository:
+1.	Log in to your GitHub account or sign up.
+2.	Navigate to the GitHub Repository of this project, [abigail-ryan/serenity-day-spa](https://github.com/abigail-ryan/serenity-day-spa)
+3.	At the top right of the Repository, just below your profile picture, find the "Fork" button.
+4.	You should now have a copy of the original repository in your own GitHub account.
+5.	Changes made to the forked repository can be merged with the original repository via a pull request.
+
 #### Clone the GitHub Repository
+
+1. Log in to Github
+2. Navigate to the GitHub Repository of this project, [abigail-ryan/serenity-day-spa](https://github.com/abigail-ryan/serenity-day-spa)
+3. Click on the code button, select whether you would like to clone with HTTPS, SSH or GitHub CLI and copy the link shown.
+4. Open the terminal in your code editor and change the current working directory to the location you want to use for the cloned directory.
+5. Type the following command in the terminal ‘git clone’ (after, you will need to paste the link you copied in step 3 above)
+6. Set up a virtual environment (this step is not required if you are using the Code Institute Template in GitPod as this will already be set up for you).
+7. Install the packages from the requirements.txt file - run Command pip3 install -r requirements.txt
+8. Set up your env.py file and copyin your API URL’s ans SECRET KEYS.
+9. Ensure your env.py file is placed in you .gitignore file before pushing your code to Github.
+
+#### Django Project Setup
+
+1. Install Django and supporting libraries:
+ * pip3 install 'django<4' gunicorn
+ * pip3 install dj_database_url psycopg2
+ * pip3 install dj3-cloudinary-storage
+2. Create a requirements.txt file and add all installed libraries to it with the command pip3 freeze --local > requirements.txt
+3. Create a new Django project - django-admin startproject project_name.
+4. Create a new app - python3 mangage.py startapp app_name
+5. Add 'app_name', to list of INSTALLED_APPS in settings.py 
+6. Create a superuser for the project to allow Admin access and enter credentials: python3 manage.py createsuperuser
+7. Migrate the changes with commands: python3 manage.py migrate
+8. Create an env.py file to store all protected data such as the DATABASE_URL and SECRET_KEY. The env.py file must be added to your gitignore file so that protected information is not pushed to public viewing on GitHub. 
+9. Replace DATABASES with:
+ * DATABASES = {
+    'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
+  }
+10. Set up the templates directory in settings.py:
+ * Under BASE_DIR enter TEMPLATES_DIR = os.path.join(BASE_DIR, ‘templates’)
+ * Update TEMPLATES = 'DIRS': [TEMPLATES_DIR] with:
+   * os.path.join(BASE_DIR, 'templates'),
+   * os.path.join(BASE_DIR, 'templates', 'allauth')
+11. Create the media, static and templates directories in top level of project file in IDE workspace.
+12. Create a Procfile for Heroku deployment with the following placed within it: web: gunicorn your_project_name.wsgi
+13. Make the necessary migrations again.
+
+#### Database Creation
+
+CI's PostgreSQL was used to create the database for this project.
+1. Input your email address and wait for the database to be created.
+2. Copy the link that was sent to the email address provided. Place the value within your DATABASE_URL in your env.py file and follow the below instructions to place it in your Heroku Config Vars.
+
+#### Cloudinary
+
+Cloudinary was used to host the images for Serenity Day Spa.
+
+1. Set up a new account at Cloudinary and add your Cloudinary API environment variable to your env.py and Heroku Config Vars. 
+2. In your project workspace:
+ * Add Cloudinary libraries to INSTALLED_APPS in settings.py
+ * Add to env.py and link up with settings.py.
+
+
+#### Deploying to Heroku
+
+1. Log in to Heroku or create an account if you are a new user.
+2. In the Heroku Dashboard, navigate to the 'New' button and select 'Create New App'.
+3. Enter an app name and choose your region. Click 'Create App'.
+4. 4.In the Deploy tab, click on the 'Settings', reach the 'Config Vars' section and click 'Reveal Config Vars'. Add the following: 
+ * CLOUDINARY_URL: cloudinary://....
+ * DATABASE_URL:postgres://...
+ * DISABLE_COLLECTSTATIC of value '1' (N.B Remove this Config Var before deployment),
+ * PORT:8000
+ * SECRET_KEY and any value
+5. Add the Heroku host name into ALLOWED_HOSTS in your projects settings.py file -> ['herokuappname', ‘localhost’, ‘8000 port url’].
+6. Once you have set up the required files (requirements.txt and Procfile), set DEBUG=False, save your project, add, commit and push the data to GitHub.
+7. Go to the 'Deploy' tab and choose GitHub as the Deployment method.
+8. Search for the repository name, select the branch that you would like to build from, and click the 'Connect' button.
+9. Choose from 'Automatic' or 'Manual' deployment options. Click 'Deploy Branch'.
+10. Once the build has finished, click the 'View' link to bring you to your deployed site. If you receive any errors, Heroku will display a reason in the app build log for you to investigate. DISABLE_COLLECTSTATIC  and PORT:8000 can now be removed from the Config Vars.
 
 ___
 
