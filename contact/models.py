@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils import timezone
 
+
 # Create your models here.
 class ContactForm(models.Model):
     name = models.CharField(max_length=200)
@@ -12,6 +13,5 @@ class ContactForm(models.Model):
     class Meta:
         ordering = ["sent_on"]
 
-
     def __str__(self):
-            return f"Contact from {self.name}"
+        return f"Contact from {self.name}"

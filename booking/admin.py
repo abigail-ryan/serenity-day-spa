@@ -10,5 +10,5 @@ class Appointment(admin.ModelAdmin):
 
     def get_full_name(self, obj):
         return f"{obj.user.first_name} {obj.user.last_name}"
-    
-    get_full_name.short_description = 'Name' 
+
+    get_full_name.short_description = 'Name'

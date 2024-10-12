@@ -1,6 +1,7 @@
 from django import forms
 from .models import Appointment, Treatment, TIME_SLOTS
 
+
 class BookingForm(forms.ModelForm):
     treatment = forms.ModelChoiceField(queryset=Treatment.objects.all())
     day = forms.DateField(widget=forms.DateInput(attrs={'type': 'date'}))
@@ -13,5 +14,11 @@ class BookingForm(forms.ModelForm):
 
     class Meta:
         model = Appointment
-        fields = ['treatment', 'day', 'time', 'first_name', 'last_name', 'email', 'phone_number', 'notes']
-       
+        fields = ['treatment',
+                  'day',
+                  'time',
+                  'first_name',
+                  'last_name',
+                  'email',
+                  'phone_number',
+                  'notes']

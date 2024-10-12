@@ -1,7 +1,7 @@
 from django.db import models
 from datetime import datetime
 from django.contrib.auth.models import User
-from treatments.models import Treatment 
+from treatments.models import Treatment
 
 
 # Create your models here.
@@ -29,8 +29,10 @@ TIME_SLOTS = [
     ("5:30 PM", "5:30 PM"),
 ]
 
+
 class Appointment(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='appointments')
+    user = models.ForeignKey(User,
+                             on_delete=models.CASCADE, related_name='appts')
     first_name = models.CharField(max_length=20, blank=False, null=False)
     last_name = models.CharField(max_length=20, blank=False, null=False)
     email = models.EmailField(blank=False, null=False)
@@ -38,7 +40,7 @@ class Appointment(models.Model):
     treatment = models.ForeignKey(Treatment, on_delete=models.CASCADE)
     day = models.DateField(default=datetime.now)
     time = models.CharField(max_length=10, choices=TIME_SLOTS, default="9 AM")
-    notes = models.TextField(blank=True, null=True) 
+    notes = models.TextField(blank=True, null=True)
     created_on = models.DateTimeField(default=datetime.now, blank=True)
 
     class Meta:
@@ -47,4 +49,7 @@ class Appointment(models.Model):
         unique_together = ['day', 'time']
 
     def __str__(self):
-        return f"{self.user.username} | day: {self.day} | time: {self.time} | treatment: {self.treatment.name}"
+        return f"{self.user.username}, |"
+        "day:{self.day} |"
+        "time:{self.time} |"
+        "treatment:{self.treatment.name}"
