@@ -44,7 +44,7 @@ The Register Page returned 4 errors as show below:
 
 ![Screenshot of Serenity Day Spa - HTML Validation Register Page](documentation/register-page-errors.png) 
 
-As this was a standard AllAuth template, I was unable to make adjustments. For future development of this project I will investigate this further.
+As this was a standard AllAuth template, I was unable to make adjustments. For future development of this project I will create a custom Register form.
 
 ____
 
@@ -56,6 +56,12 @@ My CSS Validation check returned no errors.
 ____
 
 #### Pep8 Validation
+
+[CI Python Linter](https://pep8ci.herokuapp.com/#) was used to validate the Python files. Some minor line lenght isuues, missing lines, and trailing white space errors were raised and fixed before final deployment.
+
+![Screenshot of Serenity Day Spa - PEP8 Validation - minor errors](documentation/pep8-minor-errors.png) 
+
+![Screenshot of Serenity Day Spa - PEP8 Validation - no errors](documentation/pep8-no-errors.png) 
 
 ____
 
