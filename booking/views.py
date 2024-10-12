@@ -10,18 +10,19 @@ from datetime import datetime, timedelta
 # Create your views here.
 # Code for BookingView, BookingEdit & DeleteBooking credited in README
 
-class BookingView(LoginRequiredMixin, FormView):
-    template_name = 'booking/booking.html'
-    form_class = BookingForm
-    success_url = reverse_lazy('my-account')  # Redirect after successful booking
-
-
+class BaseBookingView(LoginRequiredMixin):
     def check_availability(self, day, time, current_appointment=None):
         existing_appointments = Appointment.objects.filter(day=day, time=time)
         if current_appointment:
             existing_appointments = existing_appointments.exclude(pk=current_appointment.pk)
       
         return not existing_appointments.exists()
+
+
+class BookingView(BaseBookingView, LoginRequiredMixin, FormView):
+    template_name = 'booking/booking.html'
+    form_class = BookingForm
+    success_url = reverse_lazy('my-account')  # Redirect after successful booking
 
 
     def form_valid(self, form):
@@ -37,11 +38,11 @@ class BookingView(LoginRequiredMixin, FormView):
         notes = form.cleaned_data['notes']
 
         #  checking availability
-        today = datetime.now()
-        min_date = today.strftime('%d-%m-%Y')
-        max_date = (today + timedelta(days=21)).strftime('%d-%m-%Y')
+        today = datetime.now().date()
+        min_date = today
+        max_date = today + timedelta(days=21)
 
-        if min_date <= day.strftime('%d-%m-%Y') <= max_date:
+        if min_date <= day <= max_date:
             if day.weekday() in [1, 2, 3, 4, 5]:  # Tuesday, Wednesday, Thursday, Friday, Saturday
                 if Appointment.objects.filter(day=day).count() < 9:
                     if self.check_availability(day, time):
@@ -83,7 +84,7 @@ class BookingView(LoginRequiredMixin, FormView):
         return context
 
 
-class BookingEdit(LoginRequiredMixin, UpdateView):
+class BookingEdit(BaseBookingView, LoginRequiredMixin, UpdateView):
     """
     Edit an appointment
     """
@@ -95,6 +96,7 @@ class BookingEdit(LoginRequiredMixin, UpdateView):
     def get_object(self, queryset=None):
         return Appointment.objects.get(pk=self.kwargs['pk'], user=self.request.user)  # Ensures the logged in user owns the appointment
 
+
     def form_valid(self, form):
 
         # Exclude date and time fields from cleaned data
@@ -103,19 +105,19 @@ class BookingEdit(LoginRequiredMixin, UpdateView):
         new_time = cleaned_data.get('time')
 
 
-        # Check if the new day is valid (not Sunday or Monday)
-        if new_day.weekday() in [6, 0]:  # 6 = Sunday, 0 = Monday
-
-            messages.error(self.request, "Sorry, you can only book Tuesday to Saturday!")
-            return self.form_invalid(form)
-
         # Get today's date and calculate the maximum allowed date
         today = datetime.now().date()
         max_date = today + timedelta(days=21)
+        
 
         # Check if the new day is within the allowed range
         if not today <= new_day <= max_date:
             messages.error(self.request, "Sorry, you can only book up to 21 days in advance!")
+            return self.form_invalid(form)
+
+        # Check if the new day is valid (not Sunday or Monday)
+        if new_day.weekday() in [6, 0]:  # 6 = Sunday, 0 = Monday
+            messages.error(self.request, "Sorry, you can only book Tuesday to Saturday!")
             return self.form_invalid(form)
 
         # Get the current appointment
