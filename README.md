@@ -229,6 +229,7 @@ I created my Database Entity Relationship Diagram to demonstrate the booking pro
 * Each Treatment entity represents the individual treatment details that are displayed to the user on the front end. The treatment id PrimaryKey is automatically generated, treatment name, slug, description, excerpt, price, duration, requirements and requirement details to display to the user, and status which allow admin to create drafts of new treatments ready for publishing later.
 * The Appointment entity represents a booking made by a user for a specific treatment, with the appointment id as the PrimaryKey generated automatically, user and treatment as the ForeignKeys referenceing the User and Treatment entities, first name, last name, email, phone, day, time, and notes for the user to notify of any skin sensitivities/allergies.
 * The Contact entity represents the contact form that all site users can access. Admin can store and manage contact forms, and mark forms as ready with the status field. For future development and security this form will require user authentication to prevent spam/bot attacks.
+* Initially I had intended to create a Review feature where users could leave a review underneath each of the treatments, however due to my won time contraints this is not a feature of the current version of this project and will be implemented in future development of Serenity Day Spa.
 
 This data scheme allows admin to manage users, treatments, bookings and contact forms. 
 ____
@@ -393,6 +394,15 @@ ___
 
 
 ### Future Features
+
+For future development of this project I would like to add the following features:
+
+* Add the option for registered users to leave a review to give their feebdack to the business and other users.
+* Enable users to edit their details in their account dashboard. And also enable users to delete their entire account - this is currently only an Admin capability.
+* As the business grows, add staff and assign certain treatments to them.
+* Allow customers to choose which staff member they would like to book in with during the booking process.
+* Add the capability for customers to book more than one treatment at the time of booking.
+* Add sending booking confirmations via email upon successful booking.
 
 ___
 
