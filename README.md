@@ -33,6 +33,7 @@ Unregistered users of this site can access all the information they need to know
   * [My Account - User](#my-account)
   * [User Feedback](#user-feedback)
   * [Custom Handler Pages](#custom-handler-pages)
+  * [Security Features](#security-features)
 * [Future Features](#future-features)
 * [Technologies Used](#technologies-used)
   * [Languages](#languages)
@@ -399,8 +400,38 @@ I created custom 404 and 500 error pages which both contain Home Page buttons to
 ![Screenshot of Serenity Day Spa - custom 404 page](documentation/custom-404-page.png) 
 
 ![Screenshot of Serenity Day Spa - custom 500 page](documentation/custom-server-error.png) 
-___
 
+
+#### Security Features
+
+**User Authentication**
+
+* Django Allauth was installed to provided a secure set of features for managing user authentication, registration, and account management.
+
+**Login Security**
+
+* BookingView, BookingEdit and DeleteBooking include LoginRequiredMixin, that ensures that a user must be logged in to access certain views. 
+* If a user who is not authenticated tries to access a view that uses this mixin, they will be redirected to the login page
+
+**CSRF Protection**
+
+* Django provides built-in protection against Cross-Site Request Forgery (CSRF) attacks. CSRF tokens are generated for each user session, and they are required to submit forms or perform state-changing actions. When a user logs out, the session and associated CSRF token are invalidated, making it difficult for an attacker to forge a valid request using a copied URL.
+* I also added custom security settings for Cross-site Cookies, specifically because of my images being hoseted on Cloudinary.
+* Security settings for cookies
+
+SESSION_COOKIE_SAMESITE = 'None' | SESSION_COOKIE_SECURE = True
+
+CSRF_COOKIE_SAMESITE = 'None' | CSRF_COOKIE_SECURE = True
+
+**Form Validation**
+
+* The BookingView validates form input using the FormView class. It checks for various validation errors, such as the selected treatment, chosen day and time, overlapping bookings, and user details requirements.
+
+**Overlapping Booking**
+
+* In the BookingView the code checks for overlapping bookings by querying the database for existing bookings that match certain conditions. It compares the selected day and times with the dates of existing bookings for the same day and time. If any overlapping bookings are found, an error message is added to the form, and a warning message is displayed to the user.
+
+____
 
 ### Future Features
 
