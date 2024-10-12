@@ -517,8 +517,9 @@ ___
 ### Credits
 #### Code References
 
-* Code Institute's I Think Therefore I blog walkthrough material
-* Amy Richardson
+* Code Institute's I Think Therefore I blog walkthrough material.
+* Amy Richardsons project [FreeFido](https://github.com/amylour/FreeFido_v2) for the BookingEdit and DeleteBooking code, which I adapted for this project.
+* John Abdsho's [YouTube Tutorial](https://www.youtube.com/watch?v=s5xbtuo9pR0) for the BookingView code, which I adapted for this project.
 
 #### Content and Media References
 
