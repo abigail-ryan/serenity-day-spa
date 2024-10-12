@@ -24,6 +24,7 @@ Unregistered users of this site can access all the information they need to know
 * [Database ERD](#database-erd)
 * [Project Features](#project-features)
   * [Home](#home)
+  * [Navbar](#navbar)
   * [Treatments](#treatments)
   * [Contact](#contact)
   * [Login](#login)
@@ -32,6 +33,7 @@ Unregistered users of this site can access all the information they need to know
   * [My Account - User](#my-account)
   * [Admin Dashboard](#admin-dashboard)
   * [User Feedback](#user-feedback)
+  * [CRUD Functionality](#crud-functionality)
 * [Future Features](#future-features)
 * [Technologies Used](#technologies-used)
   * [Languages](#languages)
@@ -236,15 +238,27 @@ ____
 ### Project Features
 #### Home
 #### Navbar
+![Screenshot of Serenity Day Spa Navbar - unregistered users]() 
+
+![Screenshot of Serenity Day Spa Navbar - reguistered users logged in](documentation/navbar-logged-in.png) 
+
 #### Treatments List
 #### Treatment Details
 #### Contact
 #### Sign in
 #### Register
 #### Book Now
+
+Accessible to registered logged in users only
+
+![Screenshot of Serenity Day Spa Book Now Page - registered users logged in](documentation/book-now-page.png) 
+
 #### My Account - User
+![Screenshot of Serenity Day Spa Navbar - reguistered users logged in](documentation/my-account.png) 
+
 #### Admin Dashboard
 #### User Feedback
+#### CRUD Functionality
 
 ___
 
