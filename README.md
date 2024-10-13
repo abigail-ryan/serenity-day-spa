@@ -227,8 +227,8 @@ I created my Database Entity Relationship Diagram to demonstrate the booking pro
 * My initial User entity was created with the intention of allowing users to edit their details in the My Account dashboard, however due to my own time constraints I have chosen to add editing user details as a Future Feature for further development of this project at a later stage. The fields include user id PrimaryKey that is generated automatically upon registration, first name, last name, email and phone.
 * Each Treatment entity represents the individual treatment details that are displayed to the user on the front end. The treatment id PrimaryKey is automatically generated, treatment name, slug, description, excerpt, price, duration, requirements and requirement details to display to the user, and status which allow admin to create drafts of new treatments ready for publishing later.
 * The Appointment entity represents a booking made by a user for a specific treatment, with the appointment id as the PrimaryKey generated automatically, user and treatment as the ForeignKeys referenceing the User and Treatment entities, first name, last name, email, phone, day, time, and notes for the user to notify of any skin sensitivities/allergies.
-* The Contact entity represents the contact form that all site users can access. Admin can store and manage contact forms, and mark forms as ready with the status field. For future development and security this form will require user authentication to prevent spam/bot attacks.
-* Initially I had intended to create a Review feature where users could leave a review underneath each of the treatments, however due to my won time contraints this is not a feature of the current version of this project and will be implemented in future development of Serenity Day Spa.
+* The Contact entity represents the contact form that all site users can access. Admin can store and manage contact forms, and mark forms as read with the status field. For future development and security this form will require user authentication to prevent spam/bot attacks.
+* Initially I had intended to create a Review feature where users could leave a review underneath each of the treatments, however due to my own time contraints this is not a feature of the current version of this project and will be implemented in future development of Serenity Day Spa.
 
 This data scheme allows admin to manage users, treatments, bookings and contact forms. 
 ____
@@ -249,19 +249,19 @@ The Navbar changes for registerd users who have logged into their account, now w
 
 **Hero Section**
 
-The Home page features a hero section that has a carousel of 4 of the Spa interior images along with the Sap logo overlay text.
+The Home page features a hero section that has a carousel of 4 of the Spa's interior images along with the Spa logo overlay text.
 
 ![Screenshot of Serenity Day Spa - hero section](documentation/hero-section.PNG) 
 
 **Welcome Section**
 
-Below that, a Welcome section which briefly introduces the Spa and its offerings, along with another prompt for users to book an appointment.
+Below that, a Welcome section which briefly introduces the Spa and its offerings, along with a text prompt for users to book an appointment.
 
 ![Screenshot of Serenity Day Spa - welcome section](documentation/welcome-section.PNG) 
 
 **Popular Treatments Section**
 
-The Popular Treatments sections show users the 3 most popular Treatments which users can click to view more about, directly from the home page. The View All Treatments CTA button encourages users to view all of the Spa's offerings.
+The Popular Treatments section show users the 3 most popular Treatments which users can click to view more about, directly from the home page. The View All Treatments CTA button encourages users to view all of the Spa's treatment offerings.
 
 ![Screenshot of Serenity Day Spa - popular treatments section](documentation/popular-treatments-imgs.PNG)
 ![Screenshot of Serenity Day Spa - popular treatments section](documentation/popular-treatments-excerpts.PNG)  
@@ -269,7 +269,7 @@ The Popular Treatments sections show users the 3 most popular Treatments which u
 
 **About Section**
 
-The short About section introduces the team at Serenity, and reinforces the uniqueness of the Spa's use of natural elements. Again, users are ensouraged to book an appointment.
+The short About section introduces the team at Serenity, and reinforces the uniqueness of the Spa's use of natural elements. Again, users are encouraged to book an appointment.
 
 ![Screenshot of Serenity Day Spa - about section](documentation/about-section.PNG) 
 
@@ -281,17 +281,17 @@ The Foooter section gives users the exact location, along with contact informati
 
 #### Treatments List
 
-The Treatments page show users the same layout as the Popular Treatments section on the Home Page, keeping the layout familiar for users. Users can scroll down the page which displays the various treatment options and can click to view each one in more detail.
+The Treatments page show users the same layout as the Popular Treatments section on the Home Page, keeping the layout familiar for users. Users can scroll down the page which displays the various treatment options and can click to the 'View' button to view each one in more detail.
 
 ![Screenshot of Serenity Day Spa  - treatments page](documentation/treatments-page.PNG) 
 
 #### Treatment Details
 
-Once the user clicks the View button on the treatments page, they are brought to the Threatment details page wich give the user a full description of the Treatment including the duration, cost and any requirments.
+Once the user clicks the View button on the treatments page, they are brought to the appropriate Treatment details page wich give the user a full description of the Treatment including the duration, cost and any requirments.
 
-Below the details, users can easily navigate Back to all Treatmants without having to scroll back up to the navbar.
+Below the details, users can easily navigate Back to all treatments without having to scroll back up to the navbar.
 
-Logged in users see the Book now button at the end of the page prompting them to book an appointment.
+Logged in users see the Book Now button at the end of the page prompting them to book an appointment.
 
 ![Screenshot of Serenity Day Spa - treatments details logged in users](documentation/treatment-details-logged-in.PNG) 
 
@@ -301,20 +301,20 @@ Unregistered users see a prompt to Login or Register to book.
 
 #### Contact
 
-All users can access the Contact page to send an enquiry to the admin.
+All users can access the Contact page to send an enquiry to the business.
 
 ![Screenshot of Serenity Day Spa - contact form](documentation/contact-page.PNG) 
 
 #### Sign in
 
 The Sign in page encourages users who have not already got an account to Register first, with a direct link to the Register Page.
-The Sign in form is simple and straigt forward for users.
+The Sign in form is simple and straight forward for users.
 
 ![Screenshot of Serenity Day Spa - sign in](documentation/sign-in-page.PNG) 
 
 #### Register
 
-A simple Register page allows users to sign up with a username, optional email, and password. There is a link to the Sign in page if users have incorrectly navigated to the register page.
+A simple Register page allows users to sign up with a username, optional email, and password. There is a link to the Sign in page if users have incorrectly navigated to the Register page.
 
 ![Screenshot of Serenity Day Spa - register](documentation/register-page.PNG) 
 
@@ -327,11 +327,17 @@ Accessible to registered logged in users only, the booking form is simple and ea
 
 #### My Account - User
 
-For logged in users, they can access their account page which show them a list of their Appointments. I had initially wanted to include the users details in the My Details section as seen in my wireframes, with editing capabilities, however due to my own time constraints I have chosen to remove it from this version of my project and add it to Future Features.
+For new account holders, their account page shows a 'Book Now' button which takes them directly to the booking form page.
+
+![Screenshot of Serenity Day Spa - my account page no bookings](documentation/my-accopunt-no-bookings.png) 
+
+For logged in users, they can access their account page which show them a list of their Appointments. 
 
 The user can edit and delete their appointments as needed.
 
 ![Screenshot of Serenity Day Spa - my account page](documentation/my-account.png) 
+
+I had initially wanted to include the users details in the My Details section as seen in my wireframes, with editing capabilities, however due to my own time constraints I have chosen to remove it from this version of my project and add it to Future Features.
 
 **Edit Booking**
 
@@ -342,7 +348,7 @@ When a user chooses to edit their appointment, they are brought to the Edit Appo
 
 **Delete Booking**
 
-If users choose to delete their appointment, they first see a confirmation page asking if they are sure they want to detele this appointment. Once users click the Confirm Delete button they are returned to their account page and notified that the appointment was deleted successfully (see User Feedback section below).
+If users choose to delete their appointment, they first see a confirmation page asking if they are sure they want to detele this appointment. Once users click the Confirm Delete button they are returned to their account page and notified that the appointment was deleted successfully.
 
 ![Screenshot of Serenity Day Spa - confirm delete](documentation/delete-appointment-confirmation.png) 
 
@@ -412,13 +418,13 @@ I created custom 404 and 500 error pages which both contain Home Page buttons to
 **Login Security**
 
 * BookingView, BookingEdit and DeleteBooking include LoginRequiredMixin, that ensures that a user must be logged in to access certain views. 
-* If a user who is not authenticated tries to access a view that uses this mixin, they will be redirected to the login page
+* If a user who is not authenticated tries to access a view that uses this mixin, they will be redirected to the login page.
 
 **CSRF Protection**
 
 * Django provides built-in protection against Cross-Site Request Forgery (CSRF) attacks. CSRF tokens are generated for each user session, and they are required to submit forms or perform state-changing actions. When a user logs out, the session and associated CSRF token are invalidated, making it difficult for an attacker to forge a valid request using a copied URL.
-* I also added custom security settings for Cross-site Cookies, specifically because of my images being hoseted on Cloudinary.
-* Security settings for cookies
+* I also added custom security settings for Cross-site Cookies, specifically because of my images being hoseted on Cloudinary, and receiving warnings for such cookies in Chrome Dev Tools during development.
+* Security settings for cookies added to my settings.py fiel:
 
 SESSION_COOKIE_SAMESITE = 'None' | SESSION_COOKIE_SECURE = True
 
@@ -430,7 +436,7 @@ CSRF_COOKIE_SAMESITE = 'None' | CSRF_COOKIE_SECURE = True
 
 **Overlapping Booking**
 
-* In the BookingView the code checks for overlapping bookings by querying the database for existing bookings that match certain conditions. It compares the selected day and times with the dates of existing bookings for the same day and time. If any overlapping bookings are found, an error message is added to the form, and a warning message is displayed to the user.
+* In the BookingView the code checks for overlapping bookings by querying the database for existing bookings that match certain conditions. It compares the selected day and times with the dates/times of existing bookings for the same day and time. If any overlapping bookings are found, an error message is displayed to the user.
 
 ____
 
@@ -438,7 +444,7 @@ ____
 
 For future development of this project I would like to add the following features:
 
-* Add the option for registered users to leave a review to give their feebdack to the business and other users.
+* Add the option for registered users to leave a review to give their feedback to the business.
 * Enable users to edit their details in their account dashboard. And also enable users to delete their entire account - this is currently only an Admin capability.
 * As the business grows, add staff and assign certain treatments to them.
 * Allow customers to choose which staff member they would like to book in with during the booking process.
@@ -539,7 +545,7 @@ Use the following steps to copy a repository:
 4. Create a new app - python3 mangage.py startapp app_name
 5. Add 'app_name', to list of INSTALLED_APPS in settings.py 
 6. Create a superuser for the project to allow Admin access and enter credentials: python3 manage.py createsuperuser
-7. Migrate the changes with commands: python3 manage.py migrate
+7. Migrate the changes with command: python3 manage.py migrate
 8. Create an env.py file to store all protected data such as the DATABASE_URL and SECRET_KEY. The env.py file must be added to your gitignore file so that protected information is not pushed to public viewing on GitHub. 
 9. Replace DATABASES with:
  * DATABASES = {
@@ -550,14 +556,14 @@ Use the following steps to copy a repository:
  * Update TEMPLATES = 'DIRS': [TEMPLATES_DIR] with:
    * os.path.join(BASE_DIR, 'templates'),
    * os.path.join(BASE_DIR, 'templates', 'allauth')
-11. Create the media, static and templates directories in top level of project file in IDE workspace.
+11. Create the media, static and templates directories in top level of this project file in your IDE workspace.
 12. Create a Procfile for Heroku deployment with the following placed within it: web: gunicorn your_project_name.wsgi
 13. Make the necessary migrations again.
 
 #### Database Creation
 
 CI's PostgreSQL was used to create the database for this project.
-1. Input your email address and wait for the database to be created.
+1. Input your email address, submit and wait for the database to be created.
 2. Copy the link that was sent to the email address provided. Place the value within your DATABASE_URL in your env.py file and follow the below instructions to place it in your Heroku Config Vars.
 
 #### Cloudinary
@@ -599,8 +605,8 @@ ___
 
 #### Content and Media References
 
-* All written content on Serenity Day Spa has been generated by AI and is purely for demonstration purposes only.
-* The Spa's interior imagery was generated through [DeepAI](https://deepai.org/machine-learning-model/text2img), using my colour palette and guided prompts to deliver the desired look and feel of the images for Serenity Day Spa.
+* All written content on Serenity Day Spa has been generated by AI and edited by me, and is purely for demonstration purposes only.
+* The Spa's interior imagery was generated through [DeepAI](https://deepai.org/machine-learning-model/text2img), using my colour palette and guided text prompts to deliver the desired look and feel of the images for Serenity Day Spa.
 * The treatment images and staff image were sourced from [Pexels](https://www.pexels.com/) & [Freepik](https://www.freepik.com/):
 <details>
 <summary>Image credits</summary>

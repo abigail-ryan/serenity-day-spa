@@ -57,7 +57,7 @@ ____
 
 #### Pep8 Validation
 
-[CI Python Linter](https://pep8ci.herokuapp.com/#) was used to validate the Python files. Some minor line lenght isuues, missing lines, and trailing white space errors were raised and fixed before final deployment.
+[CI Python Linter](https://pep8ci.herokuapp.com/#) was used to validate the Python files. Some minor line lenght isuues, missing lines, and trailing white space errors were raised and fixed in all .py files before final deployment.
 
 ![Screenshot of Serenity Day Spa - PEP8 Validation - minor errors](documentation/pep8-minor-errors.png) 
 
@@ -76,7 +76,7 @@ ____
 
 #### Lighthouse scores using Chrome Dev Tools
 
-My Lighthouse performace Score for the Home Page is lower than I would have liked for both Mobile and Desktop. This is due to the fact that my carousel images in the Hero section are quite large files. I also suspect that they are loading slower due to being hosted on Cloudinary. I had previously compressed the images and placed them as static files, however this lead to lots of noise and blur within the images. For future development I will look furhter into compressing images without losing so much of the quality.
+My Lighthouse performace Score for the Home Page is lower than I would have liked for both Mobile and Desktop. This is due to the fact that my carousel images in the Hero section are quite large files. I also suspect that they are loading slower due to being larger and hosted on Cloudinary. I had previously compressed the images using TinyPNG and placed them in as static files, however this lead to lots of noise and blur within the images.
 
 **DESKTOP**
 
@@ -198,7 +198,7 @@ My Lighthouse performace Score for the Home Page is lower than I would have like
 
 <br>
 
-The Best Practices Score showed details regarding the Treatmeent Images stating the connection was not secure. This is something I will look into regarding securely loading externally hosted files.
+The Best Practices Score showed details regarding the Treatment Images stating the connection was not secure. This is something I will look into regarding securely loading externally hosted files.
 ![Screenshot of Serenity Day Spa lighthouse testing - mobile book now](documentation/lighthouse-score-best-practices.png)  
 
 ____
