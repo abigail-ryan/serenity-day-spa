@@ -10,6 +10,7 @@ Return to the [README.md](README.md) file.
 * [CSS Validation](#css-validation-using-w3c-validation) 
 * [Pep8 Validation](#pep8-validation)
 * [Lighthouse scores using Chrome Dev Tools](#lighthouse-scores-using-chrome-dev-tools)
+* [Device Testing and Browser Compability Testing](#device-testing-and-browser-compatibility-testing)
 * [Manual Testing](#manual-testing)
 * [Bugs](#bugs)
 
@@ -203,7 +204,30 @@ The Best Practices Score showed details regarding the Treatment Images stating t
 
 ____
 
-#### Manual Testing
+### Device Testing and Browser Compatibility Testing
+
+Serenity Day Spa was tested on the following:
+
+**Devices**
+
+| Device | Features Tested | Issues |
+| ---- | ------ | -------- | 
+| Realme 11 Pro+ | All feeatures tested | None |
+| Huawei P20 Pro | All features tested | None |
+| Acer Laptop | All features tested | None |
+| Koorui Desktop | All features tested | None |
+
+**Browsers**
+| Browser | Features Tested | Issues |
+| ---- | ------ | -------- | 
+| Chrome | All feeatures tested | None |
+| Opera | All features tested | None |
+| Edge | All features tested | None |
+| Koorui Desktop | All features tested | None |
+
+____
+
+### Manual Testing
 
 **Navbar**
 
