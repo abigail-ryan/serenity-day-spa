@@ -15,7 +15,7 @@ Unregistered users of this site can access all the information they need to know
   *	[Scope](#scope)
   * [Structure](#structure)
   * [Skeleton](#skeleton)
-    * [Flowchart](#flowchart)
+    * [Wireframes](#wireframes)
   * [Surface](#surface)
 * [Design](#design)
   * [Colour Scheme](#colour-scheme)
@@ -25,9 +25,10 @@ Unregistered users of this site can access all the information they need to know
 * [Project Features](#project-features)
   * [Navbar](#navbar)  
   * [Home](#home)
-  * [Treatments](#treatments)
+  * [Treatments List](#treatments-list)
+  * [Treatment Details](#treatment-details)
   * [Contact](#contact)
-  * [Login](#login)
+  * [Sign In](#sign-in)
   * [Register](#register)
   * [Book Now](#book-now)
   * [My Account - User](#my-account)
@@ -331,7 +332,7 @@ For new account holders, their account page shows a 'Book Now' button which take
 
 ![Screenshot of Serenity Day Spa - my account page no bookings](documentation/my-accopunt-no-bookings.png) 
 
-For logged in users, they can access their account page which show them a list of their Appointments. 
+For logged in users with already booked appointments, their account page shows a list of their Appointments. 
 
 The user can edit and delete their appointments as needed.
 
@@ -498,7 +499,7 @@ The full list of installed packages can be found in the requirements.txt file in
 * Google Fonts - for the fonts used within this project
 * Canva Colours - for the colour palette of this project
 * Cloudinary - for storing the image files for this project
-* Am I responsive - to display the website on various sevice sizes
+* Am I responsive - to display the website on various device sizes
 
 
 
