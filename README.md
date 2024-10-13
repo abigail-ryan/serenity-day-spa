@@ -377,6 +377,10 @@ When a users is ready to log out, they can click on the Logout menu item in the 
 
 ![Screenshot of Serenity Day Spa - successful logout message](documentation/successful-log-out-msg.PNG) 
 
+**Contact Form Thank You Message**
+
+![Screenshot of Serenity Day Spa - contact form thank you message](documentation/contact-form-thank-you-msg.png) 
+
 **Error Messages in Booking Form**
 
 ![Screenshot of Serenity Day Spa - error message](documentation/error-msg-21-days-advance.png) 
